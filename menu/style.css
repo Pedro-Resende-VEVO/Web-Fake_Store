@@ -102,8 +102,7 @@ main {
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-height: 400px;
-  min-height: 450px;
-  /*tamanho mínimo*/
+  min-height: 400px;
   height: auto;
   width: auto;
   text-align: center;
@@ -116,7 +115,10 @@ main {
 }
 
 #infoCard {
+  padding: 5%;
   display: flex;
+  max-height: 20px;
+  justify-content: space-between;
 }
 
 .price {
@@ -146,27 +148,19 @@ main {
   box-sizing: border-box;
 }
 
-#desc1,
-#desc2,
-#desc3,
-#desc4,
-#desc5,
-#desc6 {
-  text-align: justify;
-  padding: 5%;
-}
-
 .card button {
   border: none;
-  outline: 0;
   padding: 10%;
   color: white;
   background-color: #000;
   text-align: center;
   cursor: pointer;
-  width: 100%;
   font-size: 18px;
   float: inline-end;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card button:hover {

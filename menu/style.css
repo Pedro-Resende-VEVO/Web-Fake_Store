@@ -1,0 +1,351 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+* {
+  margin: 0.5%;
+}
+
+/*Cabeçalho*/
+body {
+  background-color: lightblue;
+}
+
+.nav {
+  background-color: gainsboro;
+  opacity: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  justify-content: center;
+  transform: translateX(60%);
+}
+
+#sese {
+  transform: translateY(70%);
+  font-size: xx-large;
+}
+
+#pesquisa {
+  transform: translateY(270%);
+  display: inline-flex;
+}
+
+#info {
+  transform: translateX(60%);
+}
+
+header {
+  display: inline-flex;
+  transform: translateX(10%);
+}
+
+/*Conteudo*/
+
+/*Semi-grid*/
+
+.form {
+
+  text-align: center;
+  transform: translateX(26%);
+  background-color: whitesmoke;
+  height: 0%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.carrosel {
+
+  width: 30%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: gainsboro;
+  transform: translateX(50%);
+  height: 0%;
+
+}
+
+#carro {
+  transform: translateX(-6%);
+}
+
+/*Grid*/
+
+main {
+  display: inline-flex;
+}
+
+#texto {
+  display: inline-block;
+  text-align: center;
+}
+
+.lista {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 30%;
+  font-family: arial;
+  background-color: whitesmoke;
+  border-style: solid;
+}
+
+.listaProdu {
+  cursor: pointer;
+}
+
+.grid {
+  transform: translateX(10%);
+  display: flex;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  font-family: arial;
+  background-color: whitesmoke;
+  border-style: solid;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+#desc1,
+#desc2,
+#desc3,
+#desc4,
+#desc5,
+#desc6 {
+  text-align: justify;
+  padding: 5%;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 10%;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  float: inline-end;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+
+#painel {
+  text-align: center;
+  transform: translateY(10%);
+  background-color: whitesmoke;
+  border-style: solid;
+  width: 31%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/*Rodapé*/
+
+.baixo {
+  background-color: rgba(220, 220, 220, 0.473);
+  text-align: center;
+}
+
+#rodape {
+  display: inline-flex;
+  padding: 5%;
+}
+
+.links {
+  text-align: left;
+
+}
+
+footer {
+  background-color: cadetblue;
+  text-align: center;
+}
+
+/*Responsivo*/
+
+@media screen and (max-width: 1840px) and (min-width: 1280px) {
+  .nav {
+    transform: translateX(15%);
+  }
+
+  #info {
+    transform: translateX(15%);
+  }
+
+  #texto {
+    display: inline-block;
+  }
+
+  .lista {
+    width: 40%;
+    transform: translateX(-5%);
+  }
+
+  #painel {
+    width: 46%;
+  }
+}
+
+@media screen and (max-width: 1279px) and (min-width: 993px) {
+  .nav {
+    transform: translateX(10%);
+  }
+
+  #info {
+    transform: translateX(10%);
+  }
+
+  .form {
+    transform: translateX(5%);
+  }
+
+  .carrosel {
+    width: 500px;
+    transform: translateX(30%);
+  }
+
+  .lateral {
+    transform: translateX(20%);
+  }
+
+  #texto {
+    display: inline-block;
+  }
+
+  .lista {
+    width: 40%;
+  }
+
+  #painel {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 992px) and (min-width: 769px) {
+  .nav {
+    transform: translateX(60%);
+    display: block;
+    text-align: center;
+    width: 45%;
+  }
+
+  #info {
+    transform: translateX(10%);
+  }
+
+  .carrosel {
+    width: 500px;
+    transform: translateX(10%);
+  }
+
+  .form {
+    transform: translateX(5%);
+  }
+
+  .grid {
+    width: 200%;
+  }
+
+  #texto {
+    display: inline-block;
+  }
+
+  .lista {
+    width: 80%;
+    transform: translateX(10%);
+  }
+
+  #painel {
+    width: 81%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #logo {
+    transform: translateX(80%);
+    width: 130px;
+  }
+
+  #pesquisa {
+    transform: translate(50%, 70%);
+  }
+
+  #sese {
+    transform: translateX(45%);
+  }
+
+  .nav {
+    transform: translateX(130%);
+    display: inline-block;
+  }
+
+  .lista {
+    width: 40%;
+    transform: translateX(0%);
+  }
+
+  #info {
+    transform: translateX(120%);
+
+  }
+
+  header {
+    width: 90%;
+    transform: translateX(0%);
+  }
+
+  .part1 {
+    display: block;
+    width: 100%;
+  }
+
+  /*semi-grid*/
+
+  .semi-grid {
+    display: inline-flex;
+  }
+
+  .form {
+
+    width: 300px;
+    transform: translate(50%, -170%);
+  }
+
+  .carrosel {
+    width: 350px;
+    transform: translate(-30%, -10%);
+  }
+
+  /*grid*/
+
+  .ofc-main {
+    width: 120%;
+  }
+
+  .grid {
+    width: 50%;
+    transform: translateX(30%);
+  }
+
+  .lateral {
+    width: 100%;
+    transform: translateX(45%);
+  }
+
+  #texto {
+    display: block;
+    width: 50%;
+  }
+
+  #painel {
+    width: 202px;
+  }
+}

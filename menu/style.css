@@ -77,9 +77,11 @@ main {
   text-align: center;
 }
 
+/* .lateral{
+} */
+
 .lista {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  width: 30%;
   font-family: arial;
   background-color: whitesmoke;
   border-style: solid;
@@ -96,19 +98,43 @@ main {
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  height: 100%;
-  width: 100%;
+  max-height: 450px;
+  height: auto;
+  width: auto;
   text-align: center;
   font-family: arial;
   background-color: whitesmoke;
   border-style: solid;
   overflow: hidden;
   cursor: pointer;
+  /* white-space: nowrap; */
 }
 
 .price {
   color: grey;
   font-size: 22px;
+}
+
+#img1,
+#img2,
+#img3,
+#img4,
+#img5,
+#img6 {
+  max-height: 250px;
+  height: auto;
+  width: auto;
+}
+
+#title1,
+#title2,
+#title3,
+#title4,
+#title5,
+#title6 {
+  text-align: justify;
+  padding: 5%;
+  box-sizing: border-box;
 }
 
 #desc1,

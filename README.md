@@ -12,4 +12,8 @@ Organização em pastas:
 Boxes: 
 . padronizar imagens;
 . textos com reticências ao passar do limite;
-. Passar descrição para página detalhes
+. passar descrição e botão de compra para página detalhes
+. Colocar botão de favorito
+
+Lista Lateral:
+. Adcionar coluna (produto) na linha

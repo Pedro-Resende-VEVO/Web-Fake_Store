@@ -82,10 +82,10 @@ main {
 
 .lista {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  width: 30%;
   font-family: arial;
   background-color: whitesmoke;
   border-style: solid;
+  width: 60%;
 }
 
 .listaProdu {
@@ -93,7 +93,6 @@ main {
 }
 
 .grid {
-  transform: translateX(10%);
   display: flex;
 }
 
@@ -115,9 +114,7 @@ main {
 }
 
 #infoCard {
-  padding: 5%;
   display: flex;
-  max-height: 20px;
   justify-content: space-between;
 }
 
@@ -132,6 +129,7 @@ main {
 #img4,
 #img5,
 #img6 {
+  min-height: 250px;
   max-height: 250px;
   height: auto;
   width: auto;
@@ -211,11 +209,6 @@ footer {
 
   #texto {
     display: inline-block;
-  }
-
-  .lista {
-    width: 40%;
-    transform: translateX(-5%);
   }
 
   #painel {

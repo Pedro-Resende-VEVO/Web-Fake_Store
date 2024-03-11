@@ -69,7 +69,7 @@ header {
 /*Grid*/
 
 main {
-  display: inline-flex;
+  display: flex;
 }
 
 #texto {
@@ -85,11 +85,19 @@ main {
   font-family: arial;
   background-color: whitesmoke;
   border-style: solid;
-  width: 60%;
+  width: 50%;
+  display: block;
 }
 
 .listaProdu {
   cursor: pointer;
+}
+
+#painel {
+  text-align: center;
+  background-color: whitesmoke;
+  border-style: solid;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .grid {
@@ -165,14 +173,7 @@ main {
   opacity: 0.7;
 }
 
-#painel {
-  text-align: center;
-  transform: translateY(10%);
-  background-color: whitesmoke;
-  border-style: solid;
-  width: 31%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
+
 
 /*Rodapé*/
 

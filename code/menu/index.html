@@ -25,7 +25,7 @@
   <header>
 
 
-    <img id="logo" src="/img/Logo.png" width="20%" height="20%">
+    <img id="logo" src="/img/Logo.png" width="20%">
     <div class="part1">
       <h3 id="sese">Welcome to <br><strong>Sesas Store!</strong></h3>
 
@@ -61,102 +61,99 @@
       </ul>
 
       <!--Carrinho-->
-      <span>
-        <div id="info">
-          <b>Informações do Aluno:</b>
-          <ul>
-            <li><em>Nome:</em> Pedro Henrique Resende Menezes</li>
-            <li><em>Curso:</em> Sistemas de Informação</li>
-          </ul>
-          <div>
-            <button>
-              <img src="/img/carrinho.png" width="5%">
-              MY CART
-            </button>
-          </div>
+      <div id="info">
+        <b>Informações do Aluno:</b>
+        <ul>
+          <li><em>Nome:</em> Pedro Henrique Resende Menezes</li>
+          <li><em>Curso:</em> Sistemas de Informação</li>
+        </ul>
+        <div>
+          <button>
+            <img src="/img/carrinho.png" width="5%">
+            MY CART
+          </button>
         </div>
-      </span>
+      </div>
     </div>
 
   </header>
 
   <!--Semi-grid-->
-  <main class="semi-main">
-    <div class="form">
-      <table class="tabela" border="">
-        <thead>
-          <tr>
-            <td>
-              <b>Quick Find - Choose product</b>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Find the right product at the right price
-            </td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <select class="form-select" aria-label="Default select example" id="seleTitle">
-                <option>Titles</option>
-                <option value="Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops">Fjallraven - Foldsack No. 1
-                  Backpack, Fits 15 Laptops</option>
-                <option value="Mens Casual Premium Slim Fit T-Shirts ">Mens Casual Premium Slim Fit T-Shirts </option>
-                <option value="John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet">John Hardy
-                  Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet</option>
-                <option value="Solid Gold Petite Micropave ">Solid Gold Petite Micropave </option>
-                <option value="White Gold Plated Princess">White Gold Plated Princess</option>
-                <option value="Pierced Owl Rose Gold Plated Stainless Steel Double">Pierced Owl Rose Gold Plated
-                  Stainless Steel Double</option>
-                <option value="WD 2TB Elements Portable External Hard Drive - USB 3.0 ">WD 2TB Elements Portable
-                  External Hard Drive - USB 3.0 </option>
-                <option value="SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s">SanDisk SSD PLUS 1TB Internal SSD -
-                  SATA III 6 Gb/s</option>
-                <option value="Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5">Silicon
-                  Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5</option>
-                <option value="WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive">WD 4TB Gaming
-                  Drive Works with Playstation 4 Portable External Hard Drive</option>
-                <option value="Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin">Acer SB220Q bi 21.5
-                  inches Full HD (1920 x 1080) IPS Ultra-Thin</option>
-                <option
-                  value="Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ">
-                  Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED
-                </option>
-                <option value="BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats">BIYLACLESEN Women's 3-in-1
-                  Snowboard Jacket Winter Coats</option>
-                <option value="Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket">Lock and Love
-                  Women's Removable Hooded Faux Leather Moto Biker Jacket</option>
-                <option value="Rain Jacket Women Windbreaker Striped Climbing Raincoats">Rain Jacket Women Windbreaker
-                  Striped Climbing Raincoats</option>
-                <option value="MBJ Women's Solid Short Sleeve Boat Neck V ">MBJ Women's Solid Short Sleeve Boat Neck V
-                </option>
-                <option value="Opna Women's Short Sleeve Moisture">Opna Women's Short Sleeve Moisture</option>
-                <option value="DANVOUY Womens T Shirt Casual Cotton Short">DANVOUY Womens T Shirt Casual Cotton Short
-                </option>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <select class="form-select" aria-label="Default select example" id="seleCate">
-                <option>Category</option>
-                <option value="electronics">electronics</option>
-                <option value="jewelery">jewelery</option>
-                <option value="men's clothing">men's clothing</option>
-                <option value="women's clothing">women's clothing</option>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <td onclick="pesCate()">
-              <a href="/search/pesquisa.html"><button><img src="/img/lupa.png" width="10%"> Search</button></a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <nav>
+    <!--Formulário-->
+    <table class="form" border="2">
+      <thead>
+        <tr>
+          <td>
+            <b>Quick Find - Choose product</b>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Find the right product at the right price
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <select class="form-select" aria-label="Default select example" id="seleTitle">
+              <option>Titles</option>
+              <option value="Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops">Fjallraven - Foldsack No. 1
+                Backpack, Fits 15 Laptops</option>
+              <option value="Mens Casual Premium Slim Fit T-Shirts ">Mens Casual Premium Slim Fit T-Shirts </option>
+              <option value="John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet">John Hardy
+                Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet</option>
+              <option value="Solid Gold Petite Micropave ">Solid Gold Petite Micropave </option>
+              <option value="White Gold Plated Princess">White Gold Plated Princess</option>
+              <option value="Pierced Owl Rose Gold Plated Stainless Steel Double">Pierced Owl Rose Gold Plated
+                Stainless Steel Double</option>
+              <option value="WD 2TB Elements Portable External Hard Drive - USB 3.0 ">WD 2TB Elements Portable
+                External Hard Drive - USB 3.0 </option>
+              <option value="SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s">SanDisk SSD PLUS 1TB Internal SSD -
+                SATA III 6 Gb/s</option>
+              <option value="Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5">Silicon
+                Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5</option>
+              <option value="WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive">WD 4TB Gaming
+                Drive Works with Playstation 4 Portable External Hard Drive</option>
+              <option value="Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin">Acer SB220Q bi 21.5
+                inches Full HD (1920 x 1080) IPS Ultra-Thin</option>
+              <option
+                value="Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ">
+                Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED
+              </option>
+              <option value="BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats">BIYLACLESEN Women's 3-in-1
+                Snowboard Jacket Winter Coats</option>
+              <option value="Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket">Lock and Love
+                Women's Removable Hooded Faux Leather Moto Biker Jacket</option>
+              <option value="Rain Jacket Women Windbreaker Striped Climbing Raincoats">Rain Jacket Women Windbreaker
+                Striped Climbing Raincoats</option>
+              <option value="MBJ Women's Solid Short Sleeve Boat Neck V ">MBJ Women's Solid Short Sleeve Boat Neck V
+              </option>
+              <option value="Opna Women's Short Sleeve Moisture">Opna Women's Short Sleeve Moisture</option>
+              <option value="DANVOUY Womens T Shirt Casual Cotton Short">DANVOUY Womens T Shirt Casual Cotton Short
+              </option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <select class="form-select" aria-label="Default select example" id="seleCate">
+              <option>Category</option>
+              <option value="electronics">electronics</option>
+              <option value="jewelery">jewelery</option>
+              <option value="men's clothing">men's clothing</option>
+              <option value="women's clothing">women's clothing</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td onclick="pesCate()">
+            <a href="/search/pesquisa.html"><button><img src="/img/lupa.png" width="10%"> Search</button></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
     <!--Carrosel-->
     <div class="carrosel">
       <div id="carouselExampleIndicators" class="carousel slide">
@@ -191,200 +188,221 @@
         </button>
       </div>
     </div>
-  </main>
+  </nav>
 
   <!--Grid-->
-  <main class="ofc-main">
-    <div class="grid">
-      <div class="container text-center">
-        <div class="row g-6 justify-content-center">
-          <div class="col-md-3 ms-md-auto p-3 border">
-            <div class="card" onclick="deta(1)">
-              <img id="img1" width="100%">
-              <h5 id="title1"></h5>
-              <div id="infoCard">
-                <p class="price" id="pre1"></p>
-                <!-- <p id="desc1"></p> -->
-                <button>♡</button>
-              </div>
+  <section>
+    <div class="container text-center">
+
+      <div class="row g-3">
+
+        <div class="col-md-3 ms-md-auto p-3 border">
+          <div class="card" onclick="deta(1)">
+            <img id="img1" width="100%">
+            <h5 id="title1"></h5>
+            <div id="infoCard">
+              <p class="price" id="pre1"></p>
+              <!-- <p id="desc1"></p> -->
+              <button>♡</button>
             </div>
           </div>
-          <div class="col-md-3 ms-md-auto p-3 border">
-            <div class="card" onclick="deta(2)">
-              <img id="img2" width="100%">
-              <h5 id="title2"></h5>
-              <div id="infoCard">
-                <p class="price" id="pre2"></p>
-                <!-- <p id="desc2"></p> -->
-                <button>♡</button>
-              </div>
+        </div>
+
+        <div class="col-md-3 ms-md-auto p-3 border">
+          <div class="card" onclick="deta(2)">
+            <img id="img2" width="100%">
+            <h5 id="title2"></h5>
+            <div id="infoCard">
+              <p class="price" id="pre2"></p>
+              <!-- <p id="desc2"></p> -->
+              <button>♡</button>
             </div>
           </div>
-          <div class="col-md-3 ms-md-auto p-3 border">
-            <div class="card" onclick="deta(3)">
-              <img id="img3" width="100%">
-              <h5 id="title3"></h5>
-              <div id="infoCard">
-                <p class="price" id="pre3"></p>
-                <!-- <p id="desc3"></p> -->
-                <button>♡</button>
-              </div>
+        </div>
+
+        <div class="col-md-3 ms-md-auto p-3 border">
+          <div class="card" onclick="deta(3)">
+            <img id="img3" width="100%">
+            <h5 id="title3"></h5>
+            <div id="infoCard">
+              <p class="price" id="pre3"></p>
+              <!-- <p id="desc3"></p> -->
+              <button>♡</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-3">
+
+        <div class="col-md-3 ms-md-auto p-3 border">
+          <div class="card" onclick="deta(4)">
+            <img id="img4" width="100%">
+            <h5 id="title4"></h5>
+            <div id="infoCard">
+              <p class="price" id="pre4"></p>
+              <!-- <p id="desc4"></p> -->
+              <button>♡</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 ms-md-auto p-3 border">
+          <div class="card" onclick="deta(20)">
+            <img id="img5" width="100%">
+            <h5 id="title5"></h5>
+            <div id="infoCard">
+              <p class="price" id="pre5"></p>
+              <!-- <p id="desc5"></p> -->
+              <button>♡</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 ms-md-auto p-3  border">
+          <div class="card" onclick="deta(18)">
+            <img id="img6" width="100%">
+            <h5 id="title6"></h5>
+            <div id="infoCard">
+              <p class="price" id="pre6"></p>
+              <!-- <p id="desc6"></p> -->
+              <button>♡</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!--Lista lateral-->
+  <aside>
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col">
+          <h3 id="titleAside">Most Reviwed Itens</h3>
+
+          <div class="row">
+
+            <div class="col" onclick="deta(7)">
+              <img id="img7" width="50%">
+              <p id="title7"></p>
+              <strong id="pre7"></strong>
+            </div>
+
+            <div class="col" onclick="deta(7)">
+              <img id="img8" width="50%">
+              <p id="title8"></p>
+              <strong id="pre8"></strong>
             </div>
           </div>
 
-          <div class="row g-3"></div>
+          <div class="row">
 
-          <div class="col-md-3 ms-md-auto p-3 border">
-            <div class="card" onclick="deta(4)">
-              <img id="img4" width="100%">
-              <h5 id="title4"></h5>
-              <div id="infoCard">
-                <p class="price" id="pre4"></p>
-                <!-- <p id="desc4"></p> -->
-                <button>♡</button>
-              </div>
+            <div class="col" onclick="deta(8)">
+              <img id="img9" width="50%" height="auto">
+              <p id="title9"></p>
+              <strong id="pre9"></strong>
             </div>
-          </div>
-          <div class="col-md-3 ms-md-auto p-3 border">
-            <div class="card" onclick="deta(20)">
-              <img id="img5" width="100%">
-              <h5 id="title5"></h5>
-              <div id="infoCard">
-                <p class="price" id="pre5"></p>
-                <!-- <p id="desc5"></p> -->
-                <button>♡</button>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 ms-md-auto p-3  border">
-            <div class="card" onclick="deta(18)">
-              <img id="img6" width="100%">
-              <h5 id="title6"></h5>
-              <div id="infoCard">
-                <p class="price" id="pre6"></p>
-                <!-- <p id="desc6"></p> -->
-                <button>♡</button>
-              </div>
-            </div>
-          </div>
 
+            <div class="col" onclick="deta(10)">
+              <img id="img10" width="50%">
+              <p id="title10"></p>
+              <strong id="pre10"></strong>
+            </div>
 
+          </div>
         </div>
       </div>
     </div>
 
-    <!--Lista lateral-->
-    <aside>
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <h3 id="titleAside">Most Reviwed Itens</h3>
-            <div class="row">
-              <div class="col" onclick="deta(7)">
-                <img id="img7" width="50%">
-                <p id="title7"></p>
-                <strong id="pre7"></strong>
-              </div>
-              <div class="col" onclick="deta(7)">
-                <img id="img8" width="50%">
-                <p id="title8"></p>
-                <strong id="pre8"></strong>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col" onclick="deta(8)">
-                <img id="img9" width="50%" height="auto">
-                <p id="title9"></p>
-                <strong id="pre9"></strong>
-              </div>
-              <div class="col" onclick="deta(10)">
-                <img id="img10" width="50%">
-                <p id="title10"></p>
-                <strong id="pre10"></strong>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <!--NewsLetter-->
+    <div id="painel">
+      <table>
+        <thead>
+          <tr>
+            <th>--NewsLetter--</th>
+          </tr>
+        </thead>
+        <tbody id="news">
+          <tr>
+            <td>Singup for Newsletter</td>
+          </tr>
+          <tr>
+            <td id="a"><input type="email" value=""></td>
+          </tr>
+          <tr>
+            <td><button>Join Now!</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </aside>
 
-      <!--NewsLetter-->
-      <div id="painel">
-        <table>
-          <thead>
-            <tr>
-              <th>--NewsLetter--</th>
-            </tr>
-          </thead>
-          <tbody id="news">
-            <tr>
-              <td>Singup for Newsletter</td>
-            </tr>
-            <tr>
-              <td id="a"><input type="email" value=""></td>
-            </tr>
-            <tr>
-              <td><button>Join Now!</button></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </aside>
-
-  </main>
 
   <!--Rodapé-->
 
-  <div class="baixo">
-    <section id="rodape">
-      <div class="container text-center">
-        <div class="row">
-          <div class="col">
-            <div class="metodos">
-              <b>Payment Methods: </b><br><br>
-              <img src="/img/Visa_Inc._logo.svg.png" width="20%"><br>
-              <img src="/img/fatura-mastercard.png" width="20%"><br>
-              <img src="/img/American-Express-Logo.png" width="20%"><br>
-              <img src="/img/PayPal-Logo.png" width="20%"><br>
-              <img src="/img/cash-on-delivery-icon-12.jpg" width="20%"><br>
-            </div>
-          </div>
-          <div class="col">
-            <div class="links">
-              <b>Quick Links</b><br><br>
-              <a href="#">Help</a><br>
-              <a href="#">Shipping Policy</a><br>
-              <a href="#">Cancelation & Returns</a><br>
-              <a href="#">FAQ</a><br>
-              <a href="#">Privacy Policy</a><br>
-              <a href="#">Disclamer</a>
-            </div>
-          </div>
-          <div class="col">
-            <div class="redes">
-              <b>Lets be social</b> <br> <br>
-              <img src="/img/fb_icon_325x325.png" width="20%">
-              <img src="/img/Instagram-Icon.png" width="20%">
-            </div>
-          </div>
-          <div class="col">
-            <div class="contato">
-              <b>Contact us</b> <br> <br>
-              <p>Address line one <br> Street no <br> Place</p>
+  <footer>
+    <div class="container text-center">
 
-              <img src="/img/5613972.png" width="10%"><a href="">info@company.com</a> <br>
+      <div class="row">
 
-              <img src="/img/94915.png" width="10%"> <em>1 800 4400 22</em>
-            </div>
+        <div class="col">
+          <div class="metodos">
+            <b>Payment Methods: </b><br><br>
+            <img src="/img/Visa_Inc._logo.svg.png" width="20%"><br>
+            <img src="/img/fatura-mastercard.png" width="20%"><br>
+            <img src="/img/American-Express-Logo.png" width="20%"><br>
+            <img src="/img/PayPal-Logo.png" width="20%"><br>
+            <img src="/img/cash-on-delivery-icon-12.jpg" width="20%"><br>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="links">
+            <b>Quick Links</b><br><br>
+            <a href="#">Help</a><br>
+            <a href="#">Shipping Policy</a><br>
+            <a href="#">Cancelation & Returns</a><br>
+            <a href="#">FAQ</a><br>
+            <a href="#">Privacy Policy</a><br>
+            <a href="#">Disclamer</a>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="redes">
+            <b>Lets be social</b> <br> <br>
+            <img src="/img/fb_icon_325x325.png" width="20%">
+            <img src="/img/Instagram-Icon.png" width="20%">
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="contato">
+            <b>Contact us</b> <br> <br>
+            <p>Address line one <br> Street no <br> Place</p>
+
+            <img src="/img/5613972.png" width="10%"><a href="">info@company.com</a> <br>
+
+            <img src="/img/94915.png" width="10%"> <em>1 800 4400 22</em>
           </div>
         </div>
       </div>
+    </div>
+
+
+
+
+
+  </footer>
+
+  <div id="creditos">
+    <p>&copy 2023 <a href="https://github.com/Pedro-Resende-VEVO"
+        style="color: black;">https://github.com/Pedro-Resende-VEVO</a></p>
   </div>
-
-  </section>
-
-  <footer>&copy 2023 <a href="https://github.com/Pedro-Resende-VEVO"
-      style="color: black;">https://github.com/Pedro-Resende-VEVO</a></footer>
-
 </body>
 
 </html>

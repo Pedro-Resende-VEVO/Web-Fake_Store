@@ -23,58 +23,58 @@
 <body>
     <!--Cabeçalho-->
     <header>
-        <img id="logo" src="/img/Logo.png" width="20%">
+        <img id="logo" src="/img/Logo.png" width="20%" onclick="switchPage()">
         <div class="part1">
-          <h3 id="sese">Welcome to <br><strong>Sesas Store!</strong></h3>
-    
-    
-          <!--Pesquisa-->
-          <nav id="pesquisa">
-            <div>
-              <input type="text" id="textPes" placeholder="Search for a product">
-            </div>
-            <div onclick="pes()">
-              <a href="/search/pesquisa.html"><button>Search</button></a>
-            </div>
-          </nav>
+            <h3 id="sese">Welcome to <br><strong>Sesas Store!</strong></h3>
+
+
+            <!--Pesquisa-->
+            <nav id="pesquisa">
+                <div>
+                    <input type="text" id="textPes" placeholder="Search for a product">
+                </div>
+                <div onclick="pes()">
+                    <a href="/search/pesquisa.html"><button>Search</button></a>
+                </div>
+            </nav>
         </div>
-    
+
         <!--Navbar-->
-    
+
         <div class="part2">
-          <ul class="nav">
-    
-            <li class="nav-item">
-              <h5><a class="nav-link" href="#">Sign in</a>
-            </li>
-            <li class="nav-item">
-              <h5><a class="nav-link" href="#">Register</a>
-            </li>
-            <li class="nav-item">
-              <h5><a class="nav-link" href="#">My Accont</a>
-            </li>
-            <li class="nav-item">
-              <h5><a class="nav-link" href="#">Track Order</a>
-            </li>
-          </ul>
-    
-          <!--Carrinho-->
-          <div id="info">
-            <b>Informações do Aluno:</b>
-            <ul>
-              <li><em>Nome:</em> Pedro Henrique Resende Menezes</li>
-              <li><em>Curso:</em> Sistemas de Informação</li>
+            <ul class="nav">
+
+                <li class="nav-item">
+                    <h5><a class="nav-link" href="#">Sign in</a>
+                </li>
+                <li class="nav-item">
+                    <h5><a class="nav-link" href="#">Register</a>
+                </li>
+                <li class="nav-item">
+                    <h5><a class="nav-link" href="#">My Accont</a>
+                </li>
+                <li class="nav-item">
+                    <h5><a class="nav-link" href="#">Track Order</a>
+                </li>
             </ul>
-            <div>
-              <button>
-                <img src="/img/carrinho.png" width="5%">
-                MY CART
-              </button>
+
+            <!--Carrinho-->
+            <div id="info">
+                <b>Informações do Aluno:</b>
+                <ul>
+                    <li><em>Nome:</em> Pedro Henrique Resende Menezes</li>
+                    <li><em>Curso:</em> Sistemas de Informação</li>
+                </ul>
+                <div>
+                    <button>
+                        <img src="/img/carrinho.png" width="5%">
+                        MY CART
+                    </button>
+                </div>
             </div>
-          </div>
         </div>
-    
-      </header>
+
+    </header>
 
     <main>
         <div id="aviso"></div>
@@ -211,6 +211,10 @@
             // var dados = JSON.stringify($('#textPes').val());
             var dados = document.querySelector('#textPes').value;
             sessionStorage.setItem('chave', dados);
+        }
+
+        function switchPage() {
+            window.location.href = "/code/menu/index.html";
         }
     </script>
 </body>

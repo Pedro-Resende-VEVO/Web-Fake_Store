@@ -23,7 +23,7 @@
 <body>
     <header>
 
-        <img id="logo" src="/img/Logo.png" width="20%">
+        <img id="logo" src="/img/Logo.png" width="20%" onclick="switchPage()">
         <div class="part1">
             <h3 id="sese">Welcome to <br><strong>Sesas Store!</strong></h3>
 
@@ -166,6 +166,10 @@
     <footer>&copy 2023 Sl3nc.com.</footer>
 
     <script>
+        function switchPage(){
+            window.location.href = "/code/menu/index.html";
+        }
+
         function queryString(parameter) {
             var loc = location.search.substring(1, location.search.length);
             var param_value = false;

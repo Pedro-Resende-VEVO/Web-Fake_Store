@@ -153,12 +153,14 @@ aside {
   background-color: whitesmoke;
   border-style: solid;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  width: 15%;
+  width: 16%;
   margin-right: 5%;
 }
 
 #titleNews {
-  text-align: left;
+  font-style: italic;
+  background-color: lightsalmon;
+  padding: 1%;
 }
 
 #textNews {

@@ -23,6 +23,10 @@
 
   }
 
+  #logo {
+    cursor: pointer;
+  }
+
   #sese {
     font-size: xx-large;
   }

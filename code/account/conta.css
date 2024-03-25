@@ -1,4 +1,4 @@
-  body {
+body {
     background-color: lightblue;
   }
 
@@ -35,38 +35,4 @@
 
   #info {
     margin: 2%;
-  }
-
-  /*Conteúdo*/
-  #grid {
-    display: flex;
-    background-color: azure;
-    border-style: solid;
-  }
-
-  #descri {
-    text-align: justify;
-    padding: 1%;
-  }
-
-  /*Rodapé*/
-
-  .baixo {
-    background-color: rgba(220, 220, 220, 0.473);
-    text-align: center;
-  }
-
-  #rodape {
-    display: inline-flex;
-    padding: 5%;
-  }
-
-  .links {
-    text-align: left;
-
-  }
-
-  footer {
-    background-color: cadetblue;
-    text-align: center;
   }

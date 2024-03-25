@@ -1,86 +1,102 @@
-html{
-    height: 100%;
-    width: 100%;
-  }
-  *{
-      margin: 0.5%;
-  }
   /*Cabeçalho*/
-  body{
+  body {
     background-color: lightblue;
   }
-  .nav{
-      background-color: gainsboro;
-      opacity: 80%;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-      justify-content: center;
-      transform: translateX(0%);
-  }
-  #sese{
-    text-decoration: underline;
-    transform: translateX(-20%);
-    color: black;
-  }
-  #pesquisa{
-      transform: translate(-20%,270%);
-      display: inline-flex;
-  }
-  #info{
-      transform: translateX(0%);
-  }
-  header{
-      display: inline-flex;
-      transform: translateX(0%);
+
+  /*TODO Header*/
+
+  header {
+    display: inline-flex;
+    margin: 0% 10%;
   }
 
-  /*Conteúdo*/
-  #grid{
+  .nav {
+    background-color: gainsboro;
+    opacity: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    justify-content: center;
+  }
+
+  .part1,
+  .part2 {
+    margin: 2%;
+
+  }
+
+  #sese {
+    font-size: xx-large;
+  }
+
+  #pesquisa {
+    display: inline-flex;
+  }
+
+  #info {
+    margin: 2%;
+  }
+
+  /*TODO Conteúdo*/
+
+  main {
+    margin: 3% 16%;
+  }
+
+  #grid {
     display: flex;
     background-color: azure;
     border-style: solid;
-}
-#descri{
+  }
+
+  #descri {
     text-align: justify;
     padding: 1%;
-}
-.col {
+  }
+
+  .col {
     display: flex;
     padding: 1%;
-}
-#produ{
-  width: 20%;
-  border-style: groove;
-}
-#linha{
-  border-style: solid;
-  background-color: azure;
-  cursor: pointer;
-}
-#texto{
-  text-align: justify;
-  padding: 1%;
-}
-#preco{
-  font-style: italic;
-  text-decoration: underline;
-  font-size: large;
-}
+  }
+
+  #produ {
+    width: 20%;
+    border-style: groove;
+  }
+
+  #linha {
+    border-style: solid;
+    background-color: azure;
+    cursor: pointer;
+  }
+
+  #texto {
+    text-align: justify;
+    padding: 1%;
+  }
+
+  #preco {
+    font-style: italic;
+    text-decoration: underline;
+    font-size: large;
+  }
 
   /*Rodapé*/
 
-  .baixo{
+  .baixo {
     background-color: rgba(220, 220, 220, 0.473);
     text-align: center;
   }
-  #rodape{
+
+  #rodape {
     display: inline-flex;
     padding: 5%;
   }
-  .links{
+
+  .links {
     text-align: left;
 
   }
-  footer{
+
+  footer {
     background-color: cadetblue;
     text-align: center;
   }

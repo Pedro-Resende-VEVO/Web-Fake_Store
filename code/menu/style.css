@@ -145,17 +145,25 @@ aside {
   cursor: pointer;
   float: right;
   border: 2px solid black;
-
 }
 
-#painel {
+#News {
+  margin-top: 3%;
   text-align: center;
   background-color: whitesmoke;
   border-style: solid;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 15%;
+  margin-right: 5%;
 }
 
+#titleNews {
+  text-align: left;
+}
 
+#textNews {
+  margin-bottom: 2%;
+}
 
 
 

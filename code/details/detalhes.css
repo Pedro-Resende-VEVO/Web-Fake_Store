@@ -1,65 +1,69 @@
-html{
-    height: 100%;
-    width: 100%;
-  }
-  *{
-      margin: 0.5%;
-  }
-  /*Cabeçalho*/
-  body{
+  body {
     background-color: lightblue;
   }
-  .nav{
-      background-color: gainsboro;
-      opacity: 80%;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-      justify-content: center;
-      transform: translateX(0%);
+
+  /*TODO Header*/
+
+  header {
+    display: inline-flex;
+    margin: 0% 10%;
   }
-  #sese{
-    text-decoration: underline;
-    transform: translateX(-20%);
-    color: black;
+
+  .nav {
+    background-color: gainsboro;
+    opacity: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    justify-content: center;
   }
-  #pesquisa{
-      transform: translate(-20%,270%);
-      display: inline-flex;
+
+  .part1,
+  .part2 {
+    margin: 2%;
+
   }
-  #info{
-      transform: translateX(0%);
+
+  #sese {
+    font-size: xx-large;
   }
-  header{
-      display: inline-flex;
-      transform: translateX(0%);
-      cursor: default;
+
+  #pesquisa {
+    display: inline-flex;
+  }
+
+  #info {
+    margin: 2%;
   }
 
   /*Conteúdo*/
-  #grid{
+  #grid {
     display: flex;
     background-color: azure;
     border-style: solid;
-}
-#descri{
+  }
+
+  #descri {
     text-align: justify;
     padding: 1%;
-}
+  }
 
   /*Rodapé*/
 
-  .baixo{
+  .baixo {
     background-color: rgba(220, 220, 220, 0.473);
     text-align: center;
   }
-  #rodape{
+
+  #rodape {
     display: inline-flex;
     padding: 5%;
   }
-  .links{
+
+  .links {
     text-align: left;
 
   }
-  footer{
+
+  footer {
     background-color: cadetblue;
     text-align: center;
   }

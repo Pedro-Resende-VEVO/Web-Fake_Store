@@ -1,38 +1,93 @@
 body {
-    background-color: lightblue;
-  }
+  background-color: lightblue;
+}
 
-  /*TODO Header*/
+/*TODO Header*/
 
-  header {
-    display: inline-flex;
-    margin: 0% 10%;
-  }
+header {
+  display: inline-flex;
+  margin: 0% 10%;
+}
 
-  .nav {
-    background-color: gainsboro;
-    opacity: 80%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    justify-content: center;
-  }
+.nav {
+  background-color: gainsboro;
+  opacity: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  justify-content: center;
+}
 
-  .part1,
-  .part2 {
-    margin: 2%;
-  }
+.part1,
+.part2 {
+  margin: 2%;
+}
 
-  #logo {
-    cursor: pointer;
-  }
+#logo {
+  cursor: pointer;
+}
 
-  #sese {
-    font-size: xx-large;
-  }
+#sese {
+  font-size: xx-large;
+}
 
-  #pesquisa {
-    display: inline-flex;
-  }
+#pesquisa {
+  display: inline-flex;
+}
 
-  #info {
-    margin: 2%;
-  }
+#info {
+  margin: 2%;
+}
+
+
+/*TODO Main*/
+
+main {
+  text-align: center;
+  margin: 5% 10%;
+  display: flex;
+  position: relative;
+}
+
+/*Esquerda*/
+
+#abaEsquerda {
+  text-align: center;
+  background-color: beige;
+  padding: 15% 2%;
+  margin-left: 10%;
+  width: 40%;
+  border-top-left-radius: 10%;
+  border-bottom-left-radius: 10%;
+}
+
+/*Direita*/
+
+#abaDireita {
+  background-color: cadetblue;
+  padding: 5%;
+  margin-right: 10%;
+  width: 60%;
+  border-top-right-radius: 10%;
+  border-bottom-right-radius: 10%;
+}
+
+#Auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnAuth {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding-bottom: 1%;
+  margin: 2% 5%;
+}
+
+#inputs {
+  display: block;
+}
+
+h3 {
+  margin-bottom: 5%;
+}

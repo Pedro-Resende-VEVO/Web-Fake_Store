@@ -9,9 +9,10 @@ function realizarRegistro(){
     let inputPass = document.getElementById('inputPass').value;
 
     if(validarRegistro(inputEma, inputPass) == false){
-        console.log("registro inválido")
+        console.log('registro inválido')
     }
     else{
+        console.log('registro válido')
         inserirRegistro(inputEma, inputPass);
     }
 }

@@ -70,7 +70,7 @@ section {
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-height: 400px;
-  min-height: 400px;
+  min-height: 300px;
   height: auto;
   width: auto;
   text-align: center;
@@ -90,6 +90,7 @@ section {
 .price {
   color: grey;
   font-size: 22px;
+  margin-left: 5%;
 }
 
 #img1,
@@ -113,6 +114,15 @@ section {
   text-align: justify;
   padding: 5%;
   box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  /* fallback */
+  max-height: 32px;
+  /* fallback */
+  -webkit-line-clamp: 2;
+  /* number of lines to show */
+  -webkit-box-orient: vertical;
 }
 
 .card button {
@@ -122,10 +132,12 @@ section {
   color: white;
   background-color: #000;
   cursor: pointer;
-  font-size: 18px;
-
+  font-size: 20px;
+  margin-right: 5%;
+  margin-bottom: 5%;
   justify-content: center;
   align-items: center;
+  border-radius: 30%;
 }
 
 .card button:hover {
@@ -170,22 +182,43 @@ aside {
 
 
 
-/*Rodapé*/
+/* TODO Rodapé*/
 
 footer {
   background-color: rgba(220, 220, 220, 0.473);
   text-align: center;
   display: inline-flex;
   padding: 2%;
+  width: 100%;
+}
+
+h5 {
+  margin-bottom: 5%;
+  text-align: center;
+}
+
+.metodos img {
+  margin: 3%;
+}
+
+.redes {
+  align-items: center;
 }
 
 .links {
   text-align: left;
-
+  padding: 5%;
+  background-color: rgba(146, 146, 146, 0.164);
+  border-radius: 5%;
 }
 
 #creditos {
   background-color: cadetblue;
+  text-align: center;
+}
+
+#creditos p {
+  margin: 0%;
 }
 
 /*Responsivo*/

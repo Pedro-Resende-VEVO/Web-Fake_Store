@@ -51,10 +51,29 @@ nav {
 }
 
 .carrosel {
-  width: 40%;
+  width: 48%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   background-color: gainsboro;
   float: right;
+  padding: 1%;
+}
+
+#carro1,
+#carro2,
+#carro3 {
+  min-height: 400px;
+  max-height: 400px;
+  min-width: 700px;
+  max-width: 700px;
+  height: auto;
+  width: auto;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(220, 220, 220, 0.473);
+  height: 20%;
+  border-radius: 10%;
 }
 
 /*TODO Section*/
@@ -118,7 +137,7 @@ section {
   text-overflow: ellipsis;
   display: -webkit-box;
   /* fallback */
-  max-height: 32px;
+  max-height: 35px;
   /* fallback */
   -webkit-line-clamp: 2;
   /* number of lines to show */
@@ -160,17 +179,33 @@ aside {
   text-align: center;
 }
 
-.textAside {
+#titleAside {
+  background-color: rgba(220, 220, 220, 0.473);
+}
+
+
+#title7,
+#title8,
+#title9,
+#title10 {
   display: inline-flex;
-  /*
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  line-height: 16px;
   max-height: 32px;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
-  */
+  margin-bottom: 2%;
+}
+
+#img7,
+#img8,
+#img9,
+#img10 {
+  min-height: 100px;
+  max-height: 100px;
+  height: auto;
+  width: auto;
 }
 
 #News {

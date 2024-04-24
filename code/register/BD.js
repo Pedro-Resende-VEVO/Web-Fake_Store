@@ -18,7 +18,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 
-function lenghtUsersGet() {
+function lenghtUserGet() {
+    console.log("oi")
     var user_ref = app.ref('lenghtUser')
     user_ref.on('value', function (snapshot) {
         var data = snapshot.val();
@@ -27,6 +28,10 @@ function lenghtUsersGet() {
         console.log(val);
         sessionStorage.setItem('chave', val);
     })
+}
+
+function teste(){
+    console.log("oi")
 }
 
 function getPost() {

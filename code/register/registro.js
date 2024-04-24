@@ -61,7 +61,7 @@ function inserirRegistro(email, password, usersLenght) {
                     "password": password
                 }
             ],
-            lenght: qntUsuarios() + 1
+            "lenght": qntUsuarios() + 1
         }),
     };
 

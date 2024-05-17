@@ -1,3 +1,46 @@
+<?php
+
+include ('conexao.php');
+
+$aviso = "";
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
+
+    if ($email == null || $senha == null) {
+
+        if (strlen($email) == 0) {
+            $aviso = "Preencha seu email";
+        } else if (strlen($senha) == 0) {
+            $aviso = "Preencha sua senha";
+        }
+    } else {
+
+        $sql_code = "SELECT * FROM user WHERE email = '$email' AND senha = '$senha'";
+        $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
+
+        $quantidade = $sql_query->num_rows;
+
+        if ($quantidade == 1) {
+
+            $usuario = $sql_query->fetch_assoc();
+
+            session_start();
+
+            $_SESSION['id'] = $usuario['id'];
+            $_SESSION['nome'] = $usuario['nome'];
+
+            header("Location: /Web-Fake_Store/code/menu/index.html");
+        } else {
+            $aviso = "Falha ao logar! E-mail ou senha incorretos";
+        }
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +65,7 @@
 <body>
     <header>
 
-        <img id="logo" src="/img/Logo.png" width="30%" onclick="switchPage()">
+        <img id="logo" src="img/Logo.png" width="20%" onclick="switchPage()">
         <div class="part1">
             <h3 id="sese">Welcome to <br><strong>Sesas Store!</strong></h3>
 
@@ -32,7 +75,7 @@
                     <input type="text" id="textPes" placeholder="Search for a product">
                 </div>
                 <div onclick="pes()">
-                    <a href="/search/pesquisa.html"><button>Search</button></a>
+                    <a href="/code/search/pesquisa.html"><button>Search</button></a>
                 </div>
             </nav>
         </div>
@@ -43,13 +86,13 @@
             <ul class="nav">
 
                 <li class="nav-item">
-                    <h5><a class="nav-link" href="#">Sign in</a>
+                    <h5><a class="nav-link" href="/code/login/login.html">Sign in</a>
                 </li>
                 <li class="nav-item">
-                    <h5><a class="nav-link" href="#">Register</a>
+                    <h5><a class="nav-link" href="/code/register/registro.html">Register</a>
                 </li>
                 <li class="nav-item">
-                    <h5><a class="nav-link" href="#">My Accont</a>
+                    <h5><a class="nav-link" href="/code/account/conta.html">My Accont</a>
                 </li>
                 <li class="nav-item">
                     <h5><a class="nav-link" href="#">Track Order</a>
@@ -65,7 +108,7 @@
                 </ul>
                 <div>
                     <button>
-                        <img src="/img/carrinho.png" width="5%">
+                        <img src="img/carrinho.png" width="5%">
                         MY CART
                     </button>
                 </div>
@@ -79,14 +122,14 @@
             <h3>Acess your Account</h3>
 
             <div id="Auth">
-                <button class="btnAuth"><img src="/img/logoGoogle.png" width="60%"></button>
-                <button class="btnAuth"><img src="/img/logoGoogle.png" width="60%"></button>
-                <button class="btnAuth"><img src="/img/logoGoogle.png" width="60%"></button>
+                <button class="btnAuth"><img src="img/logoGoogle.png" width="60%"></button>
+                <button class="btnAuth"><img src="img/logoGoogle.png" width="60%"></button>
+                <button class="btnAuth"><img src="img/logoGoogle.png" width="60%"></button>
             </div>
 
             <p>or use your credentials of acess:</p>
 
-            <form action="index.php" method="post">
+            <form action="login.php" method="post">
                 <div class="mb-3">
                     <label for="inputEma" class="form-label">Email address</label>
                     <input type="text" id="email" name="email">
@@ -98,18 +141,20 @@
                 </div>
                 <button type="submit">Entrar</button>
             </form>
+            <br>
+            <p><?php echo ($aviso)?></p>
         </section>
 
         <section id="abaDireita">
 
             <div id="textoCentral">
-                <h3>Welcome Back!</h3>
+                <h3>Your first time?</h3>
                 <p>if you <b>don't have an account</b><br><i>keep conect with us</i><br>make your register with the
                     button
                     below
                 </p>
 
-                <button type="button" class="btn btn-primary" onclick="loginDirect()">Dark</button>
+                <button type="button" class="btn btn-primary" onclick="loginDirect()">Register</button>
             </div>
         </section>
     </main>

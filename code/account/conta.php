@@ -1,3 +1,9 @@
+<?php
+
+include("protect.php");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +27,7 @@
 <body>
     <header>
 
-        <img id="logo" src="/img/Logo.png" width="20%" onclick="switchPage()">
+        <img id="logo" src="img/Logo.png" width="20%" onclick="switchPage()">
         <div class="part1">
             <h3 id="sese">Welcome to <br><strong>Sesas Store!</strong></h3>
 
@@ -32,7 +38,7 @@
                     <input type="text" id="textPes" placeholder="Search for a product">
                 </div>
                 <div onclick="pes()">
-                    <a href="/search/pesquisa.html"><button>Search</button></a>
+                    <a href="/code/search/pesquisa.html"><button>Search</button></a>
                 </div>
             </nav>
         </div>
@@ -43,13 +49,13 @@
             <ul class="nav">
 
                 <li class="nav-item">
-                    <h5><a class="nav-link" href="#">Sign in</a>
+                    <h5><a class="nav-link" href="/code/login/login.html">Sign in</a>
                 </li>
                 <li class="nav-item">
-                    <h5><a class="nav-link" href="#">Register</a>
+                    <h5><a class="nav-link" href="/code/register/registro.html">Register</a>
                 </li>
                 <li class="nav-item">
-                    <h5><a class="nav-link" href="#">My Accont</a>
+                    <h5><a class="nav-link" href="/code/account/conta.html">My Accont</a>
                 </li>
                 <li class="nav-item">
                     <h5><a class="nav-link" href="#">Track Order</a>
@@ -65,7 +71,7 @@
                 </ul>
                 <div>
                     <button>
-                        <img src="/img/carrinho.png" width="5%">
+                        <img src="img/carrinho.png" width="5%">
                         MY CART
                     </button>
                 </div>

@@ -134,13 +134,13 @@ function pesCate() {
 
 }
 
-function switchPageAccount() {
-    sessionStorage.setItem('contaAtiva', true)
+// function switchPageAccount() {
+//     //sessionStorage.setItem('contaAtiva', true)
 
-    if (sessionStorage.getItem('contaAtiva')) {
-        window.location.href = "/code/register/registro.html";
-    }
-    else {
-        window.location.href = "/code/account/conta.html";
-    }
-}
+//     if (sessionStorage.getItem('contaAtiva')) {
+//         window.location.href = "/Web-Fake_Store/code/register/registro.php";
+//     }
+//     else {
+//         window.location.href = "/Web-Fake_Store/code/account/conta.php";
+//     }
+// }

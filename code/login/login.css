@@ -50,9 +50,8 @@ main {
 /*Esquerda*/
 
 #abaEsquerda {
-  text-align: center;
   background-color: beige;
-  padding: 15% 2%;
+  padding: 5%;
   margin-left: 10%;
   width: 40%;
   border-top-left-radius: 10%;
@@ -63,7 +62,7 @@ main {
 
 #abaDireita {
   background-color: cadetblue;
-  padding: 5%;
+  padding: 15% 2%;
   margin-right: 10%;
   width: 40%;
   border-top-right-radius: 10%;

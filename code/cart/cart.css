@@ -1,0 +1,38 @@
+body {
+    background-color: lightblue;
+  }
+
+  /*TODO Header*/
+
+  header {
+    display: inline-flex;
+    margin: 0% 10%;
+  }
+
+  .nav {
+    background-color: gainsboro;
+    opacity: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    justify-content: center;
+  }
+
+  .part1,
+  .part2 {
+    margin: 2%;
+  }
+
+  #logo {
+    cursor: pointer;
+  }
+
+  #sese {
+    font-size: xx-large;
+  }
+
+  #pesquisa {
+    display: inline-flex;
+  }
+
+  #info {
+    margin: 2%;
+  }

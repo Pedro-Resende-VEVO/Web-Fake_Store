@@ -1,12 +1,11 @@
 <?php
 
-include ("protect.php");
+include("protect.php");
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -80,27 +79,8 @@ include ("protect.php");
         </div>
 
     </header>
+    
 
-    <section>
-        <h1>Your profile</h1>
-        <article>
-            <h3>Account information</h3>
-        </article>
-    </section>
-    <aside>
-        <section>
-            <h3>wishlist</h3>
-            <p></p>
-        </section>
-        <section>
-            <h3>Change your password</h3>
-            <p></p>
-        </section>
-        <section>
-            <h3>Logout</h3>
-            <p></p>
-        </section>
-    </aside>
+    
 </body>
-
 </html>

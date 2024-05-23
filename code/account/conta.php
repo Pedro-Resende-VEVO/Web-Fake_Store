@@ -1,6 +1,13 @@
 <?php
 
+include ("conexao.php");
+
 include ("protect.php");
+
+$sql_code = "SELECT * FROM user WHERE email = '$email' AND senha = '$senha'";
+$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
+
+$userWish = $sql_code
 
 ?>
 
@@ -81,26 +88,65 @@ include ("protect.php");
 
     </header>
 
-    <section>
-        <h1>Your profile</h1>
-        <article>
-            <h3>Account information</h3>
-        </article>
-    </section>
-    <aside>
-        <section>
-            <h3>wishlist</h3>
-            <p></p>
+    <main>
+        <aside>
+            <section>
+                <h3>Change your password</h3>
+                <p></p>
+            </section>
+
+            <section>
+                <h3>Logout</h3>
+                <p></p>
+            </section>
+        </aside>
+
+
+        <section id="profile">
+            <h1>Your profile</h1>
+            <hr>
+            <article id="account">
+                <h3 style="text-align: center;">Account information</h3>
+                <h5>Name: <?php echo $_SESSION['nome'] ?></h5><br>
+                <h5>Email: <?php echo $_SESSION['email'] ?></h5>
+            </article>
+
+            <article id="wish">
+                <h3 style="text-align: center;">Wishlist</h3>
+                <p><?php echo ($userWhish)?></p>
+            </article>
         </section>
-        <section>
-            <h3>Change your password</h3>
-            <p></p>
-        </section>
-        <section>
-            <h3>Logout</h3>
-            <p></p>
-        </section>
-    </aside>
+
+
+    </main>
 </body>
 
 </html>
+
+<style>
+    main {
+        display: flex;
+        margin: 5%;
+        justify-content: space-between;
+    }
+
+    aside{
+        background-color: antiquewhite;
+        padding: 2%;
+        border-radius: 40%;
+        height: 15%;
+    }
+
+    #profile {
+        justify-content: center;
+        padding: 2%;
+        width: 70%;
+    }
+
+    #account,
+    #wish {
+        background-color: burlywood;
+        padding: 2% 5%;
+    }
+
+</style>

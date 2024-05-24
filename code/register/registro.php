@@ -1,6 +1,8 @@
 <?php
 include ('conexao.php');
 
+$aviso = "";
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $nome = $_POST['nome'];
@@ -14,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($quantidade == 0) {
 
-        $sql_code = "INSERT INTO (nome, email, senha) VALUES ('$nome','$email','$senha'";
+        $sql_code = "INSERT INTO user (nome, email, senha) VALUES ('$nome','$email','$senha')";
         $sql_query = $mysqli->query($sql_code) or die($aviso = "Falha na execução do código SQL" . $mysqli->error);        
 
         header("Location: /Web-Fake_Store/code/menu/index.html");
@@ -128,7 +130,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <p>or use your email for registration:</p>
 
-            <form action="login.php" method="post">
+            <form action="registro.php" method="post">
                 <div class="mb-3">
                     <label for="inputEma" class="form-label">Name</label>
                     <input type="text" id="name" name="nome">

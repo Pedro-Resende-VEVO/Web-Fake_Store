@@ -1,7 +1,7 @@
 <?php
 
 $hostname = "localhost";
-$DB = "testedb";
+$DB = "fake_store";
 $user = "root";
 $password = "";
 

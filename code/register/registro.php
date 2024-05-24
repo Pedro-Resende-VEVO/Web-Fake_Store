@@ -1,5 +1,27 @@
 <?php
 include ('conexao.php');
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
+
+    $sql_code = "SELECT * FROM user WHERE email = '$email'";
+    $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
+
+    $quantidade = $sql_query->num_rows;
+
+    if ($quantidade == 0) {
+
+        $sql_code = "INSERT INTO (nome, email, senha) VALUES ('$nome','$email','$senha'";
+        $sql_query = $mysqli->query($sql_code) or die($aviso = "Falha na execução do código SQL" . $mysqli->error);        
+
+        header("Location: /Web-Fake_Store/code/menu/index.html");
+    } else {
+        $aviso = "Falha ao registrar! E-mail já está sendo utilizado";
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -106,16 +128,24 @@ include ('conexao.php');
 
             <p>or use your email for registration:</p>
 
-            <div class="mb-3">
-                <label for="inputEma" class="form-label">Email address</label>
-                <input type="email" id="inputEma" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-            </div>
-            <div class="mb-3">
-                <label for="inputPass" class="form-label">Password</label>
-                <input type="password" id="inputPass" aria-describedby="passwordHelp">
-            </div>
-            <button type="submit" class="btn btn-primary" onclick="realizarRegistro()">Submit</button>
+            <form action="login.php" method="post">
+                <div class="mb-3">
+                    <label for="inputEma" class="form-label">Name</label>
+                    <input type="text" id="name" name="nome">
+                </div>
+                <div class="mb-3">
+                    <label for="inputEma" class="form-label">Email address</label>
+                    <input type="text" id="email" name="email">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="inputPass" class="form-label">Password</label>
+                    <input type="password" name="senha">
+                </div>
+                <button type="submit">Entrar</button>
+            </form>
+            <br>
+            <p><?php echo ($aviso) ?></p>
         </section>
     </main>
 

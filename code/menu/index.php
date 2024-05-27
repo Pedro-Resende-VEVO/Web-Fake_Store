@@ -1,3 +1,14 @@
+<?php
+  include("conexao.php");
+
+  $oi = "";
+
+  function oi(){
+    $oi = "oiii";
+  }
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -184,6 +195,10 @@
       </div>
     </div>
   </nav>
+
+  <button onclick="oi()">OI</button>
+
+  <p>Ele diz</p><?php echo ($oi)?>
 
   <!--Grid-->
   <section>

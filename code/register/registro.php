@@ -144,7 +144,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <label for="inputPass" class="form-label">Password</label>
                     <input type="password" name="senha">
                 </div>
-                <button type="submit">Entrar</button>
+                <button type="submit">Send</button>
             </form>
             <br>
             <p><?php echo ($aviso) ?></p>

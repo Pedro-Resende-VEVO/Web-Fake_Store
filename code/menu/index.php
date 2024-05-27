@@ -1,11 +1,39 @@
 <?php
-  include("conexao.php");
+include ("conexao.php");
 
-  $oi = "";
+$coraWish = ["*","♡","♡","♡","♡","♡","♡"]; //depois fazer função que coloca os corações certos com base a tabela wish
 
-  function oi(){
-    $oi = "oiii";
+session_start();
+
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+
+  if (isset($_SESSION['id'])) //se tiver o ID registrado 
+  {
+    $sql_code = "SELECT * FROM wish WHERE userID = '$_SESSION'['id']'' AND wishID = '$_GET'['prod']''"; //CUIDADO COM O USO DO SIMPLE QUOTE
+    $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
+
+    $quantidade = $sql_query->num_rows;
+
+    if ($quantidade = 0) { //se não tiver o id produto naquele perfil... add
+      $sql_code = "INSERT INTO wish (userID, wishID) VALUES ($_SESSION'['id']', '$_GET'['prod']''";
+      $sql_query = $mysqli->query($sql_code) or die($aviso = "Falha na execução do código SQL" . $mysqli->error);
+
+      $coraWish[$_GET['prod']] = '❤';
+
+
+    } else { //se já estiver, se remove dos favoritos
+      $sql_code = "DELETE FROM wish WHERE userID = '$_SESSION'['id']'' AND wishID = '$_GET'['prod']''";
+      $sql_query = $mysqli->query($sql_code) or die($aviso = "Falha na execução do código SQL" . $mysqli->error);
+
+      $coraWish[$_GET['prod']] = "♡";
+    }
+
+
+  } else {
+    echo "<script> alert(\"Faça login para usar essa função\"); </script>";
   }
+
+}
 
 ?>
 
@@ -59,18 +87,18 @@
       <ul class="nav">
 
         <li class="nav-item">
-            <h5><a class="nav-link" href="/Web-Fake_Store/code/login/login.php">Sign in</a>
+          <h5><a class="nav-link" href="/Web-Fake_Store/code/login/login.php">Sign in</a>
         </li>
         <li class="nav-item">
-            <h5><a class="nav-link" href="/Web-Fake_Store/code/register/registro.php">Register</a>
+          <h5><a class="nav-link" href="/Web-Fake_Store/code/register/registro.php">Register</a>
         </li>
         <li class="nav-item">
-            <h5><a class="nav-link" href="/Web-Fake_Store/code/account/conta.php">My Accont</a>
+          <h5><a class="nav-link" href="/Web-Fake_Store/code/account/conta.php">My Accont</a>
         </li>
         <li class="nav-item">
-            <h5><a class="nav-link" href="#">Track Order</a>
+          <h5><a class="nav-link" href="#">Track Order</a>
         </li>
-    </ul>
+      </ul>
 
       <!--Carrinho-->
       <div id="info">
@@ -161,7 +189,8 @@
         </tr>
         <tr>
           <td onclick="pesCate()">
-            <a href="/Web-Fake_Store/code/search/pesquisa.html"><button><img src="img/lupa.png" width="10%"> Search</button></a>
+            <a href="/Web-Fake_Store/code/search/pesquisa.html"><button><img src="img/lupa.png" width="10%">
+                Search</button></a>
           </td>
         </tr>
       </tbody>
@@ -196,10 +225,6 @@
     </div>
   </nav>
 
-  <button onclick="oi()">OI</button>
-
-  <p>Ele diz</p><?php echo ($oi)?>
-
   <!--Grid-->
   <section>
     <div class="container text-center">
@@ -212,8 +237,9 @@
             <h5 id="title1"></h5>
             <div id="infoCard">
               <p class="price" id="pre1"></p>
-              <!-- <p id="desc1"></p> -->
-              <button>♡</button>
+              <form action="index.php" method="GET">
+                <button type="submit" name="prod" value="1"><?php echo $coraWish[1] ?></button>
+              </form>
             </div>
           </div>
         </div>
@@ -224,8 +250,10 @@
             <h5 id="title2"></h5>
             <div id="infoCard">
               <p class="price" id="pre2"></p>
-              <!-- <p id="desc2"></p> -->
-              <button>♡</button>
+
+              <form action="index.php" method="GET">
+                <button type="submit" name="prod" value="2"><?php echo $coraWish[2] ?></button>
+              </form>
             </div>
           </div>
         </div>
@@ -236,8 +264,10 @@
             <h5 id="title3"></h5>
             <div id="infoCard">
               <p class="price" id="pre3"></p>
-              <!-- <p id="desc3"></p> -->
-              <button>♡</button>
+
+              <form action="index.php" method="GET">
+                <button type="submit" name="prod" value="3"><?php echo $coraWish[3] ?></button>
+              </form>
             </div>
           </div>
         </div>
@@ -251,8 +281,10 @@
             <h5 id="title4"></h5>
             <div id="infoCard">
               <p class="price" id="pre4"></p>
-              <!-- <p id="desc4"></p> -->
-              <button>♡</button>
+
+              <form action="index.php" method="GET">
+                <button type="submit" name="prod" value="4"><?php echo $coraWish[4] ?></button>
+              </form>
             </div>
           </div>
         </div>
@@ -263,8 +295,10 @@
             <h5 id="title5"></h5>
             <div id="infoCard">
               <p class="price" id="pre5"></p>
-              <!-- <p id="desc5"></p> -->
-              <button>♡</button>
+
+              <form action="index.php" method="GET">
+                <button type="submit" name="prod" value="5"><?php echo $coraWish[5] ?></button>
+              </form>
             </div>
           </div>
         </div>
@@ -275,8 +309,10 @@
             <h5 id="title6"></h5>
             <div id="infoCard">
               <p class="price" id="pre6"></p>
-              <!-- <p id="desc6"></p> -->
-              <button>♡</button>
+
+              <form action="index.php" method="GET">
+                <button type="submit" name="prod" value="6"><?php echo $coraWish[6] ?></button>
+              </form>
             </div>
           </div>
         </div>
@@ -401,9 +437,9 @@
     </div>
 
 
-<php>
-  
-</php>
+    <php>
+
+    </php>
 
 
   </footer>

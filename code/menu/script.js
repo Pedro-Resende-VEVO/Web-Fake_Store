@@ -111,7 +111,7 @@ $.ajax({
 //Funções para página detalhes
 
 function deta(valor) {
-    window.location.href = "/Web-Fake_Store/code/details/detalhes.html?product=" + valor;
+    window.location.href = "/Web-Fake_Store/code/details/detalhes.html?produto=" + valor;
 }
 
 //Função para página de pesquisa
@@ -133,14 +133,3 @@ function pesCate() {
     sessionStorage.setItem('chaveTitle', selectTitle);
 
 }
-
-// function switchPageAccount() {
-//     //sessionStorage.setItem('contaAtiva', true)
-
-//     if (sessionStorage.getItem('contaAtiva')) {
-//         window.location.href = "/Web-Fake_Store/code/register/registro.php";
-//     }
-//     else {
-//         window.location.href = "/Web-Fake_Store/code/account/conta.php";
-//     }
-// }

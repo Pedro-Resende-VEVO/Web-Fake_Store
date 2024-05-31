@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['nome'] = $usuario['nome'];
             $_SESSION['email'] = $usuario['email'];
 
-            header("Location: /Web-Fake_Store/code/menu/index.html");
+            header("Location: /Web-Fake_Store/code/menu/index.php");
         } else {
             $aviso = "Falha ao logar! E-mail ou senha incorretos";
         }
@@ -87,16 +87,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <ul class="nav">
 
                 <li class="nav-item">
-                    <h5><a class="nav-link" href="/code/login/login.html">Sign in</a>
+                    <h5><a class="nav-link" href="/Web-Fake_Store/code/login/login.php">Sign in</a>
                 </li>
                 <li class="nav-item">
-                    <h5><a class="nav-link" href="/code/register/registro.html">Register</a>
+                    <h5><a class="nav-link" href="/Web-Fake_Store/code/register/registro.php">Register</a>
                 </li>
                 <li class="nav-item">
-                    <h5><a class="nav-link" href="/code/account/conta.html">My Accont</a>
+                    <h5><a class="nav-link" href="/Web-Fake_Store/code/account/conta.php">My Accont</a>
                 </li>
                 <li class="nav-item">
-                    <h5><a class="nav-link" href="#">Track Order</a>
+                    <h5><a class="nav-link" href="/Web-Fake_Store/code/cart/cart.php">Track Order</a>
                 </li>
             </ul>
 
@@ -142,7 +142,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <button type="submit">Send</button>
             </form>
             <br>
-            <p><?php echo ($aviso)?></p>
+            <p><?php echo ($aviso) ?></p>
         </section>
 
         <section id="abaDireita">
@@ -158,6 +158,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </section>
     </main>
+
+
 </body>
 
 </html>
+
+<script>
+    function switchPage() {
+        window.location.href = "/Web-Fake_Store/code/menu/index.php";
+    }
+
+    function loginDirect() {
+        window.location.href = "/Web-Fake_Store/code/register/registro.php";
+    }
+</script>

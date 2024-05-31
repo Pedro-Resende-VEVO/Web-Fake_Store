@@ -111,7 +111,7 @@ $.ajax({
 //Funções para página detalhes
 
 function deta(valor) {
-    window.location.href = "/code/details/detalhes.html?produto=" + valor;
+    window.location.href = "/Web-Fake_Store/code/details/detalhes.html?product=" + valor;
 }
 
 //Função para página de pesquisa

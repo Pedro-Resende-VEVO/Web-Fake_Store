@@ -3,9 +3,11 @@ include ("conexao.php");
 
 $coraWish = ["*","♡","♡","♡","♡","♡","♡"]; //depois fazer função que coloca os corações certos com base a tabela wish
 
+$_GET['prod'] = "";
+
 session_start();
 
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+if ($_GET['prod'] != "" ) {
 
   if (isset($_SESSION['id'])) //se tiver o ID registrado 
   {
@@ -96,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
           <h5><a class="nav-link" href="/Web-Fake_Store/code/account/conta.php">My Accont</a>
         </li>
         <li class="nav-item">
-          <h5><a class="nav-link" href="#">Track Order</a>
+          <h5><a class="nav-link" href="/Web-Fake_Store/code/cart/cart.php">Track Order</a>
         </li>
       </ul>
 
@@ -436,21 +438,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
       </div>
     </div>
 
-
-    <php>
-
-    </php>
-
-
   </footer>
 
   <div id="creditos">
     <p>&copy 2023 <a href="https://github.com/Pedro-Resende-VEVO"
         style="color: black;">https://github.com/Pedro-Resende-VEVO</a></p>
   </div>
+  
 </body>
-
-
-
 
 </html>

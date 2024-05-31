@@ -9,7 +9,7 @@ $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQ
 
 $userWish = $sql_code
 
-?>
+    ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -57,16 +57,16 @@ $userWish = $sql_code
             <ul class="nav">
 
                 <li class="nav-item">
-                    <h5><a class="nav-link" href="/code/login/login.html">Sign in</a>
+                    <h5><a class="nav-link" href="/Web-Fake_Store/code/login/login.php">Sign in</a>
                 </li>
                 <li class="nav-item">
-                    <h5><a class="nav-link" href="/code/register/registro.html">Register</a>
+                    <h5><a class="nav-link" href="/Web-Fake_Store/code/register/registro.php">Register</a>
                 </li>
                 <li class="nav-item">
-                    <h5><a class="nav-link" href="/code/account/conta.html">My Accont</a>
+                    <h5><a class="nav-link" href="/Web-Fake_Store/code/account/conta.php">My Accont</a>
                 </li>
                 <li class="nav-item">
-                    <h5><a class="nav-link" href="#">Track Order</a>
+                    <h5><a class="nav-link" href="/Web-Fake_Store/code/cart/cart.php">Track Order</a>
                 </li>
             </ul>
 
@@ -113,7 +113,7 @@ $userWish = $sql_code
 
             <article id="wish">
                 <h3 style="text-align: center;">Wishlist</h3>
-                <p><?php echo ($userWhish)?></p>
+                <p><?php echo ($userWhish) ?></p>
             </article>
         </section>
 
@@ -130,7 +130,7 @@ $userWish = $sql_code
         justify-content: space-between;
     }
 
-    aside{
+    aside {
         background-color: antiquewhite;
         padding: 2%;
         border-radius: 40%;
@@ -148,5 +148,10 @@ $userWish = $sql_code
         background-color: burlywood;
         padding: 2% 5%;
     }
-
 </style>
+
+<script>
+    function switchPage() {
+            window.location.href = "/Web-Fake_Store/code/menu/index.php";
+        }
+</script>

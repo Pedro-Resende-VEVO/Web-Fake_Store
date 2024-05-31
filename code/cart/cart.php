@@ -1,11 +1,12 @@
 <?php
 
-include("protect.php");
+include ("protect.php");
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,16 +50,16 @@ include("protect.php");
             <ul class="nav">
 
                 <li class="nav-item">
-                    <h5><a class="nav-link" href="/code/login/login.html">Sign in</a>
+                    <h5><a class="nav-link" href="/Web-Fake_Store/code/login/login.php">Sign in</a>
                 </li>
                 <li class="nav-item">
-                    <h5><a class="nav-link" href="/code/register/registro.html">Register</a>
+                    <h5><a class="nav-link" href="/Web-Fake_Store/code/register/registro.php">Register</a>
                 </li>
                 <li class="nav-item">
-                    <h5><a class="nav-link" href="/code/account/conta.html">My Accont</a>
+                    <h5><a class="nav-link" href="/Web-Fake_Store/code/account/conta.php">My Accont</a>
                 </li>
                 <li class="nav-item">
-                    <h5><a class="nav-link" href="#">Track Order</a>
+                    <h5><a class="nav-link" href="/Web-Fake_Store/code/cart/cart.php">Track Order</a>
                 </li>
             </ul>
 
@@ -79,8 +80,15 @@ include("protect.php");
         </div>
 
     </header>
-    
 
-    
+
+
 </body>
+
 </html>
+
+<script>
+    function switchPage() {
+            window.location.href = "/Web-Fake_Store/code/menu/index.php";
+        }
+</script>

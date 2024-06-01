@@ -19,7 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $sql_code = "INSERT INTO user (nome, email, senha) VALUES ('$nome','$email','$senha')";
         $sql_query = $mysqli->query($sql_code) or die($aviso = "Falha na execução do código SQL" . $mysqli->error);
 
-        header("Location: /Web-Fake_Store/code/menu/index.html");
+        header("Location: /Web-Fake_Store/code/menu/index.php");
+        echo "<script> alert(\"Cadastro feito com sucesso\"); </script>";
     } else {
         $aviso = "Falha ao registrar! E-mail já está sendo utilizado";
     }

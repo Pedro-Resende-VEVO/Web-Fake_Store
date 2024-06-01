@@ -34,6 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['email'] = $usuario['email'];
 
             header("Location: /Web-Fake_Store/code/menu/index.php");
+            echo "<script> alert(\"Login feito com sucesso\"); </script>";
         } else {
             $aviso = "Falha ao logar! E-mail ou senha incorretos";
         }

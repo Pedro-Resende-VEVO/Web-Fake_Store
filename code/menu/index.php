@@ -1,37 +1,48 @@
 <?php
 include ("conexao.php");
 
-$coraWish = ["*","♡","♡","♡","♡","♡","♡"]; //depois fazer função que coloca os corações certos com base a tabela wish
-
 session_start();
 
-if (isset($_GET['wish'])) {
+$userID = $_SESSION['id'];
 
-  if (isset($_SESSION['id'])) //se tiver o ID registrado 
-  {
-    $userID = $_SESSION['id'];
-    $wishID = $_GET['wish'];
+if (isset($_SESSION['id'])) {
 
-    $sql_code = "SELECT * FROM wish WHERE userID = '$userID' AND wishID = '$wishID'"; //CUIDADO COM O USO DO SIMPLE QUOTE
+  for ($i = 1; $i <= 6; $i++) {
+    $sql_code = "SELECT * FROM wish WHERE userID = '$userID' AND wishID = '$i'";
     $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
 
     $quantidade = $sql_query->num_rows;
 
-    if ($quantidade = 0) { //se não tiver o id produto naquele perfil... add
-      $sql_code = "INSERT INTO wish (userID, wishID) VALUES ($_SESSION'['id']', '$_GET'['wish']''";
-      $sql_query = $mysqli->query($sql_code) or die($aviso = "Falha na execução do código SQL" . $mysqli->error);
-
-      $coraWish[$_GET['wish']] = '❤';
-
-
-    } else { //se já estiver, se remove dos favoritos
-      $sql_code = "DELETE FROM wish WHERE userID = '$_SESSION'['id']'' AND wishID = '$_GET'['wish']''";
-      $sql_query = $mysqli->query($sql_code) or die($aviso = "Falha na execução do código SQL" . $mysqli->error);
-
-      $coraWish[$_GET['wish']] = "♡";
+    if ($quantidade == 0) {
+      $coraWish[$i] = '♡';
+    } else {
+      $coraWish[$i] = '❤';
     }
+  }
+} else {
+  $coraWish = ["*", "♡", "♡", "♡", "♡", "♡", "♡"];
+}
 
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
+  $wishID = $_GET['wish'];
+
+  if (isset($_SESSION['id'])) //se tiver o ID registrado 
+  {
+    if ($coraWish[$wishID] = '♡') { //se não tiver o id produto naquele perfil... add
+      echo "<script> alert(\"Entrou inserir\"); </script>";
+      $sql_code = "INSERT INTO wish (userID, wishID) VALUES ('$userID', '$wishID')";
+      $sql_query = $mysqli->query($sql_code) or die($aviso = "Falha na execução do código SQL" . $mysqli->error);
+
+      $coraWish[$wishID] = '❤';
+
+    } else if ($coraWish[$wishID] = '❤') { //se já estiver, se remove dos favoritos
+      echo "<script> alert(\"Entrou remover\"); </script>";
+      $sql_code = "DELETE FROM wish WHERE userID = '$userID' AND wishID = '$wishID'";
+      $sql_query = $mysqli->query($sql_code) or die($aviso = "Falha na execução do código SQL" . $mysqli->error);
+
+      $coraWish[$wishID] = "♡";
+    }
   } else {
     echo "<script> alert(\"Faça login para usar essa função\"); </script>";
   }
@@ -240,7 +251,7 @@ if (isset($_GET['wish'])) {
             <h5 id="title1"></h5>
             <div id="infoCard">
               <p class="price" id="pre1"></p>
-              <form action="index.php" method="GET">
+              <form method="GET">
                 <button type="submit" name="wish" value="1"><?php echo $coraWish[1] ?></button>
               </form>
             </div>

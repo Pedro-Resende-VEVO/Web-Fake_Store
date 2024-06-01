@@ -3,9 +3,11 @@ include ("conexao.php");
 
 session_start();
 
-$userID = $_SESSION['id'];
+$coraWish;
 
 if (isset($_SESSION['id'])) {
+
+  $userID = $_SESSION['id'];
 
   for ($i = 1; $i <= 6; $i++) {
     $sql_code = "SELECT * FROM wish WHERE userID = '$userID' AND wishID = '$i'";
@@ -23,20 +25,26 @@ if (isset($_SESSION['id'])) {
   $coraWish = ["*", "♡", "♡", "♡", "♡", "♡", "♡"];
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-
-  $wishID = $_GET['wish'];
+if (isset($_GET['wish'])) {
 
   if (isset($_SESSION['id'])) //se tiver o ID registrado 
   {
-    if ($coraWish[$wishID] = '♡') { //se não tiver o id produto naquele perfil... add
+    $userID = $_SESSION['id'];
+    $wishID = $_GET['wish'];
+    
+    $sql_code = "SELECT * FROM wish WHERE userID = '$userID' AND wishID = '$wishID'";
+    $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
+
+    $quantidade = $sql_query->num_rows;
+
+    if ($quantidade == 0) { //se não tiver o id produto naquele perfil... add
       echo "<script> alert(\"Entrou inserir\"); </script>";
       $sql_code = "INSERT INTO wish (userID, wishID) VALUES ('$userID', '$wishID')";
       $sql_query = $mysqli->query($sql_code) or die($aviso = "Falha na execução do código SQL" . $mysqli->error);
 
       $coraWish[$wishID] = '❤';
 
-    } else if ($coraWish[$wishID] = '❤') { //se já estiver, se remove dos favoritos
+    } else { //se já estiver, se remove dos favoritos
       echo "<script> alert(\"Entrou remover\"); </script>";
       $sql_code = "DELETE FROM wish WHERE userID = '$userID' AND wishID = '$wishID'";
       $sql_query = $mysqli->query($sql_code) or die($aviso = "Falha na execução do código SQL" . $mysqli->error);
@@ -81,8 +89,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     <img id="logo" src="img/Logo.png" width="20%">
     <div class="part1">
       <h3 id="sese">Welcome to <br><strong>Sesas Store!</strong></h3>
-
-      <!-- <a href="/Web-Fake_Store/code/account/conta.html"></a> -->
 
       <!--Pesquisa-->
       <nav id="pesquisa">

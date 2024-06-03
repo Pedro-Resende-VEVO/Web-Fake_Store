@@ -4,12 +4,46 @@ include ("conexao.php");
 
 include ("protect.php");
 
-$sql_code = "SELECT * FROM user WHERE email = '$email' AND senha = '$senha'";
+$userID = $_SESSION['id'];
+
+$sql_code = "SELECT * FROM wish WHERE userID = '$userID'";
 $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
 
-$userWish = $sql_code
+$quantidade = $sql_query->num_rows;
 
-    ?>
+if ($quantidade == 0) {
+    $userWhish = "-User without wish products-";
+} else {
+    $userWhish = "<div class=\"container text-center\"> <div class=\"row g-3\">";
+
+    for ($i = 0; $i < $quantidade; $i++) {
+        $userWhish .=
+            "<div class=\"col-md-3 ms-md-auto p-3 border\">
+        <div class=\"card\" onclick=\"deta(1)\">
+          <img id=\"img1\" width=\"100%\">
+          <h5 id=\"title1\"></h5>
+          <div id=\"infoCard\">
+            <p class=\"price\" id=\"pre1\"></p>
+            <form method=\"GET\">
+              <button type=\"submit\" name=\"wish\" value=\"1\">❤</button>
+            </form>
+          </div>
+        </div>
+      </div>
+        <script> $.ajax({
+            url: 'https://fakestoreapi.com/products/1'
+        })
+            .done(response => {
+                $('#img1').prop('src', response.image);
+                document.getElementById('title1').innerHTML = response.title;
+                document.getElementById('pre1').innerHTML = \"R$\" + response.price;
+                document.getElementById('desc1').innerHTML = response.description;
+            }) </script>";
+    }
+
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -90,14 +124,13 @@ $userWish = $sql_code
 
     <main>
         <aside>
-            <section>
+            <!-- <section>
                 <h3>Change your password</h3>
                 <p></p>
-            </section>
+            </section> -->
 
             <section>
-                <h3>Logout</h3>
-                <p></p>
+                <h3 style="text-decoration: none; color: #000;"><a href="logout.php">Logout</a></h3>
             </section>
         </aside>
 
@@ -113,7 +146,7 @@ $userWish = $sql_code
 
             <article id="wish">
                 <h3 style="text-align: center;">Wishlist</h3>
-                <p><?php echo ($userWhish) ?></p>
+                <p><?php echo $userWhish ?></p>
             </article>
         </section>
 
@@ -148,10 +181,93 @@ $userWish = $sql_code
         background-color: burlywood;
         padding: 2% 5%;
     }
+
+    /* TODO cardWish */
+
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-height: 400px;
+        min-height: 300px;
+        height: auto;
+        width: auto;
+        text-align: center;
+        font-family: arial;
+        background-color: whitesmoke;
+        border-style: solid;
+        overflow: hidden;
+        cursor: pointer;
+        /* white-space: nowrap; */
+    }
+
+    #infoCard {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .price {
+        color: grey;
+        font-size: 22px;
+        margin-left: 5%;
+    }
+
+    #img1,
+    #img2,
+    #img3,
+    #img4,
+    #img5,
+    #img6 {
+        min-height: 250px;
+        max-height: 250px;
+        height: auto;
+        width: auto;
+    }
+
+    #title1,
+    #title2,
+    #title3,
+    #title4,
+    #title5,
+    #title6 {
+        text-align: justify;
+        padding: 5%;
+        box-sizing: border-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        /* fallback */
+        max-height: 35px;
+        /* fallback */
+        -webkit-line-clamp: 2;
+        /* number of lines to show */
+        -webkit-box-orient: vertical;
+    }
+
+    .card button {
+        border: none;
+        padding-left: 10px;
+        padding-right: 10px;
+        color: white;
+        background-color: #000;
+        cursor: pointer;
+        font-size: 20px;
+        margin-right: 5%;
+        margin-bottom: 5%;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30%;
+    }
+
+    .card button:hover {
+        opacity: 0.7;
+    }
 </style>
 
 <script>
     function switchPage() {
-            window.location.href = "/Web-Fake_Store/code/menu/index.php";
-        }
+        window.location.href = "/Web-Fake_Store/code/menu/index.php";
+    }
+
+    function deta(valor) {
+        window.location.href = "/Web-Fake_Store/code/details/detalhes.html?produto=" + valor;
+    }
 </script>

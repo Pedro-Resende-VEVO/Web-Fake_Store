@@ -4,4 +4,4 @@ session_start();
 
 session_destroy();
 
-header("Location: /Web-Fake_Store/code/register/registro.php");
+header("Location: /Web-Fake_Store/code/menu/index.php");

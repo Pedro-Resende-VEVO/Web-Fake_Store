@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 html{
     height: 100%;
     width: 100%;
@@ -83,4 +84,128 @@ html{
   footer{
     background-color: cadetblue;
     text-align: center;
+=======
+  /*Cabeçalho*/
+  body {
+    background-color: lightblue;
+  }
+
+  /*TODO Header*/
+
+  header {
+    display: inline-flex;
+    margin: 0% 10%;
+  }
+
+  .nav {
+    background-color: gainsboro;
+    opacity: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    justify-content: center;
+  }
+
+  .part1,
+  .part2 {
+    margin: 2%;
+
+  }
+
+  #logo {
+    cursor: pointer;
+  }
+
+  #sese {
+    font-size: xx-large;
+  }
+
+  #pesquisa {
+    display: inline-flex;
+  }
+
+  #info {
+    margin: 2%;
+  }
+
+  /*TODO Conteúdo*/
+
+  main {
+    margin: 3% 16%;
+  }
+
+  #grid {
+    display: flex;
+    background-color: azure;
+    border-style: solid;
+  }
+
+  #descri {
+    text-align: justify;
+    padding: 1%;
+  }
+
+  .col {
+    display: flex;
+    padding: 1%;
+  }
+
+  #produ {
+    width: 20%;
+    border-style: groove;
+  }
+
+  #linha {
+    border-style: solid;
+    background-color: azure;
+    cursor: pointer;
+  }
+
+  #texto {
+    text-align: justify;
+    padding: 1%;
+  }
+
+  #preco {
+    font-style: italic;
+    text-decoration: underline;
+    font-size: large;
+  }
+
+  /* TODO Rodapé*/
+
+  footer {
+    background-color: rgba(220, 220, 220, 0.473);
+    text-align: center;
+    display: inline-flex;
+    padding: 2%;
+    width: 100%;
+  }
+
+  h5 {
+    margin-bottom: 5%;
+    text-align: center;
+  }
+
+  .metodos img {
+    margin: 3%;
+  }
+
+  .redes {
+    align-items: center;
+  }
+
+  .links {
+    text-align: left;
+    padding: 5%;
+    background-color: rgba(146, 146, 146, 0.164);
+    border-radius: 5%;
+  }
+
+  #creditos {
+    background-color: cadetblue;
+    text-align: center;
+  }
+
+  #creditos p {
+    margin: 0%;
+>>>>>>> sese
   }

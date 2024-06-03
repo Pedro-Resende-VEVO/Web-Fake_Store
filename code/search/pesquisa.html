@@ -17,12 +17,17 @@
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.js"
         integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+<<<<<<< HEAD
     <script src="script.js"></script>
+=======
+    <script src="/menu/script.js"></script>
+>>>>>>> sese
 </body>
 
 <body>
     <!--Cabeçalho-->
     <header>
+<<<<<<< HEAD
 
 
         <a href="index.html"><img id="logo" src="Screenshot_32.png" width="80%"></a>
@@ -30,6 +35,11 @@
             <a href="index.html">
                 <h3 id="sese">Welcome Sese!</h3>
             </a>
+=======
+        <img id="logo" src="img/Logo.png" width="20%" onclick="switchPage()">
+        <div class="part1">
+            <h3 id="sese">Welcome to <br><strong>Sesas Store!</strong></h3>
+>>>>>>> sese
 
 
             <!--Pesquisa-->
@@ -38,9 +48,13 @@
                     <input type="text" id="textPes" placeholder="Search for a product">
                 </div>
                 <div onclick="pes()">
+<<<<<<< HEAD
                     <form>
                         <button>Search</button>
                     </form>
+=======
+                    <a href="/code/search/pesquisa.html"><button>Search</button></a>
+>>>>>>> sese
                 </div>
             </nav>
         </div>
@@ -51,6 +65,7 @@
             <ul class="nav">
 
                 <li class="nav-item">
+<<<<<<< HEAD
                     <h5><a class="nav-link" href="#">Sign in</a>
                 </li>
                 <li class="nav-item">
@@ -76,6 +91,35 @@
                     </div>
                 </div>
             </span>
+=======
+                    <h5><a class="nav-link" href="/Web-Fake_Store/code/login/login.php">Sign in</a>
+                </li>
+                <li class="nav-item">
+                    <h5><a class="nav-link" href="/Web-Fake_Store/code/register/registro.php">Register</a>
+                </li>
+                <li class="nav-item">
+                    <h5><a class="nav-link" href="/Web-Fake_Store/code/account/conta.php">My Accont</a>
+                </li>
+                <li class="nav-item">
+                    <h5><a class="nav-link" href="/Web-Fake_Store/code/cart/cart.php">Track Order</a>
+                </li>
+            </ul>
+
+            <!--Carrinho-->
+            <div id="info">
+                <b>Informações do Aluno:</b>
+                <ul>
+                    <li><em>Nome:</em> Pedro Henrique Resende Menezes</li>
+                    <li><em>Curso:</em> Sistemas de Informação</li>
+                </ul>
+                <div>
+                    <button>
+                        <img src="img/carrinho.png" width="5%">
+                        MY CART
+                    </button>
+                </div>
+            </div>
+>>>>>>> sese
         </div>
 
     </header>
@@ -93,6 +137,7 @@
         </div>
     </main>
 
+<<<<<<< HEAD
     <!--Rodapé-->
 
     <div class="baixo">
@@ -220,3 +265,145 @@
 </body>
 
 </html>
+=======
+  <!--Rodapé-->
+
+  <footer>
+    <div class="container text-center">
+
+      <div class="row">
+
+        <div class="col">
+          <div class="metodos">
+            <h5>Payment Methods: </h5>
+            <img src="img/Visa_Inc._logo.svg.png" width="20%">
+            <img src="img/fatura-mastercard.png" width="20%">
+            <img src="img/American-Express-Logo.png" width="20%"><br>
+            <img src="img/PayPal-Logo.png" width="20%">
+            <img src="img/cash-on-delivery-icon-12.jpg" width="20%">
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="links">
+            <h5>Quick Links</h5>
+            <a href="">Help</a><br>
+            <a href="">Shipping Policy</a><br>
+            <a href="">Cancelation & Returns</a><br>
+            <a href="">FAQ</a><br>
+            <a href="">Privacy Policy</a><br>
+            <a href="">Disclamer</a>
+          </div>
+        </div>
+
+        <div class="col">
+          <h5>Lets be social</h5>
+          <div class="redes">
+            <img src="img/fb_icon_325x325.png" width="20%">
+            <img src="img/Instagram-Icon.png" width="20%">
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="contato">
+            <h5>Contact us</h5>
+            <p>Address line: Seven <br> Street: No place</p>
+
+            <img src="img/5613972.png" width="10%" style="padding-right: 2%;"><a href="">info@company.com</a> <br>
+
+            <img src="img/94915.png" width="10%"> <em>1 800 4400 22</em>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+  <div id="creditos">
+    <p>&copy 2023 <a href="https://github.com/Pedro-Resende-VEVO"
+        style="color: black;">https://github.com/Pedro-Resende-VEVO</a></p>
+  </div>
+
+    
+</body>
+
+</html>
+
+
+<script>
+
+    let dados = sessionStorage.getItem("chave");
+    let dadosTitle = sessionStorage.getItem("chaveTitle");
+
+    $.ajax({
+        url: 'https://fakestoreapi.com/products'
+    })
+        .done(response => {
+
+            let tela = document.getElementById("tela");
+            let tela2 = document.getElementById("tela2");
+            let strHtml = '';
+            let strHtml2 = '';
+            let contador = 0;
+
+
+            for (let i = 0; i <= 19; i++) {
+                if (dadosTitle == response[i].title || dados == response[i].title) {
+                    contador++;
+                    document.getElementById('aviso').innerHTML = `<h3>Produto selecionado:</h3>`
+                    strHtml += `<div class="row" onclick="deta(${i + 1})" id="linha">
+                                    <div class="col">
+                                        <img src="${response[i].image}" id="produ">
+                                        <div id="texto"><h5>
+                                        ${response[i].title}</h5> <hr> <p id="desc">${'Descrição: ' + response[i].description}</p> <p id="preco"> ${'Preço: R$' + response[i].price}</p>
+                                        </div>
+                                    </div>
+                                </div><br>`
+                }
+                if (dados == response[i].category) {
+                    contador++;
+                    document.getElementById('avisoCat').innerHTML = `<h3>Categoria selecionada:</h3>`
+                    strHtml2 += `<div class="row" onclick="deta(${i + 1})" id="linha">
+                                    <div class="col">
+                                        <img src="${response[i].image}" id="produ">
+                                        <div id="texto"><h5>
+                                        ${response[i].title}</h5> <hr> <p id="desc">${'Descrição: ' + response[i].description}</p> <p id="preco"> ${'Preço: R$' + response[i].price}</p>
+                                        </div>
+                                    </div>
+                                </div>`
+                }
+            }
+
+
+            if (contador == 0) {
+                for (let i = 0; i <= 19; i++) {
+                    document.getElementById('aviso').innerHTML = `<h4>O produto pesquisado não está em nosso catálogo :( <br> Porém estes estão:`
+                    strHtml += `<div class="row" onclick="deta(${i + 1})" id="linha">
+                                    <div class="col">
+                                        <img src="${response[i].image}" id="produ">
+                                        <div id="texto"><h5>
+                                        ${response[i].title}</h5> <hr> <p id="desc">${'Descrição: ' + response[i].description}</p> <p id="preco"> ${'Preço: R$' + response[i].price}</p>
+                                        </div>
+                                    </div>
+                                </div>`
+                }
+            }
+            tela.innerHTML = strHtml;
+            tela2.innerHTML = strHtml2;
+        })
+
+    function deta(valor) {
+        window.location.href = "/Web-Fake_Store/code/details/detalhes.html?produto=" + valor;
+    }
+
+    function pes() {
+        // var dados = JSON.stringify($('#textPes').val());
+        var dados = document.querySelector('#textPes').value;
+        sessionStorage.setItem('chave', dados);
+    }
+
+    function switchPage() {
+        window.location.href = "/Web-Fake_Store/code/menu/index.php";
+    }
+</script>
+>>>>>>> sese

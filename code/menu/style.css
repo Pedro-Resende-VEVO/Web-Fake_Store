@@ -1,15 +1,12 @@
-html {
-  height: 100%;
-  width: 100%;
-}
-
-* {
-  margin: 0.5%;
-}
-
-/*Cabeçalho*/
 body {
   background-color: lightblue;
+}
+
+/*TODO Header*/
+
+header {
+  display: inline-flex;
+  margin: 0% 10%;
 }
 
 .nav {
@@ -17,156 +14,259 @@ body {
   opacity: 80%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   justify-content: center;
-  transform: translateX(60%);
+}
+
+.part1,
+.part2 {
+  margin: 2%;
 }
 
 #sese {
-  transform: translateY(70%);
   font-size: xx-large;
 }
 
 #pesquisa {
-  transform: translateY(270%);
   display: inline-flex;
 }
 
 #info {
-  transform: translateX(60%);
+  margin: 2%;
 }
 
-header {
-  display: inline-flex;
-  transform: translateX(10%);
+
+/*TODO Nav*/
+
+nav {
+  display: inline-block;
+  margin: 2% 10%;
 }
-
-/*Conteudo*/
-
-/*Semi-grid*/
 
 .form {
-
+  width: 30%;
   text-align: center;
-  transform: translateX(26%);
   background-color: whitesmoke;
-  height: 0%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  float: left;
 }
 
 .carrosel {
-
-  width: 30%;
+  width: 48%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   background-color: gainsboro;
-  transform: translateX(50%);
-  height: 0%;
-
+  float: right;
+  padding: 1%;
 }
 
-#carro {
-  transform: translateX(-6%);
+#carro1,
+#carro2,
+#carro3 {
+  min-height: 400px;
+  max-height: 400px;
+  min-width: 700px;
+  max-width: 700px;
+  height: auto;
+  width: auto;
 }
 
-/*Grid*/
-
-main {
-  display: inline-flex;
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(220, 220, 220, 0.473);
+  height: 20%;
+  border-radius: 10%;
 }
 
-#texto {
-  display: inline-block;
-  text-align: center;
-}
+/*TODO Section*/
 
-.lista {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  width: 30%;
-  font-family: arial;
-  background-color: whitesmoke;
-  border-style: solid;
-}
-
-.listaProdu {
-  cursor: pointer;
-}
-
-.grid {
-  transform: translateX(10%);
+section {
+  float: left;
   display: flex;
+  width: 65%;
 }
+
+/*Cartão*/
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  height: 100%;
-  width: 100%;
+  max-height: 400px;
+  min-height: 300px;
+  height: auto;
+  width: auto;
   text-align: center;
   font-family: arial;
   background-color: whitesmoke;
   border-style: solid;
   overflow: hidden;
   cursor: pointer;
+  /* white-space: nowrap; */
+}
+
+#infoCard {
+  display: flex;
+  justify-content: space-between;
 }
 
 .price {
   color: grey;
   font-size: 22px;
+  margin-left: 5%;
 }
 
-#desc1,
-#desc2,
-#desc3,
-#desc4,
-#desc5,
-#desc6 {
+#img1,
+#img2,
+#img3,
+#img4,
+#img5,
+#img6 {
+  min-height: 250px;
+  max-height: 250px;
+  height: auto;
+  width: auto;
+}
+
+#title1,
+#title2,
+#title3,
+#title4,
+#title5,
+#title6 {
   text-align: justify;
   padding: 5%;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  /* fallback */
+  max-height: 35px;
+  /* fallback */
+  -webkit-line-clamp: 2;
+  /* number of lines to show */
+  -webkit-box-orient: vertical;
 }
 
 .card button {
   border: none;
-  outline: 0;
-  padding: 10%;
+  padding-left: 10px;
+  padding-right: 10px;
   color: white;
   background-color: #000;
-  text-align: center;
   cursor: pointer;
-  width: 100%;
-  font-size: 18px;
-  float: inline-end;
+  font-size: 20px;
+  margin-right: 5%;
+  margin-bottom: 5%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30%;
 }
 
 .card button:hover {
   opacity: 0.7;
 }
 
-#painel {
-  text-align: center;
-  transform: translateY(10%);
+
+/*TODO Aside */
+
+aside {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  font-family: arial;
   background-color: whitesmoke;
   border-style: solid;
-  width: 31%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-
-/*Rodapé*/
-
-.baixo {
-  background-color: rgba(220, 220, 220, 0.473);
+  width: 30%;
+  display: block;
+  cursor: pointer;
+  float: right;
+  border: 2px solid black;
   text-align: center;
 }
 
-#rodape {
+#titleAside {
+  background-color: rgba(220, 220, 220, 0.473);
+}
+
+
+#title7,
+#title8,
+#title9,
+#title10 {
   display: inline-flex;
-  padding: 5%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  max-height: 32px;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  margin-bottom: 2%;
+}
+
+#img7,
+#img8,
+#img9,
+#img10 {
+  min-height: 100px;
+  max-height: 100px;
+  height: auto;
+  width: auto;
+}
+
+#News {
+  margin-top: 3%;
+  text-align: center;
+  background-color: whitesmoke;
+  border-style: solid;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 16%;
+  margin-right: 5%;
+}
+
+#titleNews {
+  font-style: italic;
+  background-color: lightsalmon;
+  padding: 1%;
+}
+
+#textNews {
+  margin-bottom: 2%;
+}
+
+
+
+
+/* TODO Rodapé*/
+
+footer {
+  background-color: rgba(220, 220, 220, 0.473);
+  text-align: center;
+  display: inline-flex;
+  padding: 2%;
+  width: 100%;
+}
+
+h5 {
+  margin-bottom: 5%;
+  text-align: center;
+}
+
+.metodos img {
+  margin: 3%;
+}
+
+.redes {
+  align-items: center;
 }
 
 .links {
   text-align: left;
-
+  padding: 5%;
+  background-color: rgba(146, 146, 146, 0.164);
+  border-radius: 5%;
 }
 
-footer {
+#creditos {
   background-color: cadetblue;
   text-align: center;
+}
+
+#creditos p {
+  margin: 0%;
 }
 
 /*Responsivo*/
@@ -182,11 +282,6 @@ footer {
 
   #texto {
     display: inline-block;
-  }
-
-  .lista {
-    width: 40%;
-    transform: translateX(-5%);
   }
 
   #painel {

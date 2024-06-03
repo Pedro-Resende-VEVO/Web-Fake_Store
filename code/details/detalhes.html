@@ -23,22 +23,19 @@
 <body>
     <header>
 
-
-        <a href="index.html"><img id="logo" src="Screenshot_32.png" width="80%"></a>
+        <img id="logo" src="img/Logo.png" width="20%" onclick="switchPage()">
         <div class="part1">
-            <a href="index.html">
-                <h3 id="sese">Welcome Sese!</h3>
-            </a>
+            <h3 id="sese">Welcome to <br><strong>Sesas Store!</strong></h3>
 
 
             <!--Pesquisa-->
             <nav id="pesquisa">
                 <div>
                     <input type="text" id="textPes" placeholder="Search for a product">
-                  </div>
+                </div>
                 <div onclick="pes()">
-                    <a href="pesquisa.html"><button>Search</button></a>
-                  </div>
+                    <a href="/Web-Fake_Store/code/search/pesquisa.html"><button>Search</button></a>
+                </div>
             </nav>
         </div>
 
@@ -48,31 +45,33 @@
             <ul class="nav">
 
                 <li class="nav-item">
-                    <h5><a class="nav-link" href="#">Sign in</a>
+                    <h5><a class="nav-link" href="/Web-Fake_Store/code/login/login.php">Sign in</a>
                 </li>
                 <li class="nav-item">
-                    <h5><a class="nav-link" href="#">Register</a>
+                    <h5><a class="nav-link" href="/Web-Fake_Store/code/register/registro.php">Register</a>
                 </li>
                 <li class="nav-item">
-                    <h5><a class="nav-link" href="#">My Accont</a>
+                    <h5><a class="nav-link" href="/Web-Fake_Store/code/account/conta.php">My Accont</a>
                 </li>
                 <li class="nav-item">
-                    <h5><a class="nav-link" href="#">Track Order</a>
+                    <h5><a class="nav-link" href="/Web-Fake_Store/code/cart/cart.php">Track Order</a>
                 </li>
             </ul>
 
-            <!--Info e carrinho-->
-            <span>
-                <div id="info">
-                    Cash on Delivery | 30 days return <br> 24/7 Customer Service <b> 1 800 00 11 22 </b>
-                    <div>
-                        <button>
-                            <img src="carrinho.png" width="5%">
-                            MY CART
-                        </button>
-                    </div>
+            <!--Carrinho-->
+            <div id="info">
+                <b>Informações do Aluno:</b>
+                <ul>
+                    <li><em>Nome:</em> Pedro Henrique Resende Menezes</li>
+                    <li><em>Curso:</em> Sistemas de Informação</li>
+                </ul>
+                <div>
+                    <button>
+                        <img src="img/carrinho.png" width="5%">
+                        MY CART
+                    </button>
                 </div>
-            </span>
+            </div>
         </div>
 
     </header>
@@ -88,22 +87,22 @@
                         <h2 id="title"></h2>
                     </dt>
                     <hr>
-                    <dt>Preço:</dt>
+                    <dt>Price:</dt>
                     <dd>
                         <p id="price">a</p>
                     </dd>
                     <hr>
-                    <dt>Descrição:</dt>
+                    <dt>Description:</dt>
                     <dd>
                         <p id="desc">a</p>
                     </dd>
                     <hr>
-                    <dt>Categoria:</dt>
+                    <dt>Category:</dt>
                     <dd>
                         <p id="cate">a</p>
                     </dd>
                     <hr>
-                    <dt>Avaliações:</dt>
+                    <dt>Rate:</dt>
                     <dd>
                         <p id="rate">a</p>
                         <p id="count">a</p>
@@ -114,59 +113,73 @@
     </main>
 
     <!--Rodapé-->
-    <hr>
 
-    <div class="baixo">
-        <section id="rodape">
-            <div class="container text-center">
-                <div class="row">
-                    <div class="col">
-                        <div class="metodos">
-                            <b>Payment Methods: </b><br><br>
-                            <img src="Visa_Inc._logo.svg.png" width="20%"><br>
-                            <img src="fatura-mastercard.png" width="20%"><br>
-                            <img src="American-Express-Logo.png" width="20%"><br>
-                            <img src="PayPal-Logo.png" width="20%"><br>
-                            <img src="cash-on-delivery-icon-12.jpg" width="20%"><br>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="links">
-                            <b>Quick Links</b><br><br>
-                            <a href="#">Help</a><br>
-                            <a href="#">Shipping Policy</a><br>
-                            <a href="#">Cancelation & Returns</a><br>
-                            <a href="#">FAQ</a><br>
-                            <a href="#">Privacy Policy</a><br>
-                            <a href="#">Disclamer</a>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="redes">
-                            <b>Lets be social</b> <br> <br>
-                            <img src="fb_icon_325x325.png" width="20%">
-                            <img src="Instagram-Icon.png" width="20%">
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="contato">
-                            <b>Contact us</b> <br> <br>
-                            <p>Address line one <br> Street no <br> Place</p>
+    <footer>
+        <div class="container text-center">
 
-                            <img src="5613972.png" width="10%"><a href="">info@company.com</a> <br>
+            <div class="row">
 
-                            <img src="94915.png" width="10%"> <em>1 800 4400 22</em>
-                        </div>
+                <div class="col">
+                    <div class="metodos">
+                        <h5>Payment Methods: </h5>
+                        <img src="img/Visa_Inc._logo.svg.png" width="20%">
+                        <img src="img/fatura-mastercard.png" width="20%">
+                        <img src="img/American-Express-Logo.png" width="20%"><br>
+                        <img src="img/PayPal-Logo.png" width="20%">
+                        <img src="img/cash-on-delivery-icon-12.jpg" width="20%">
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="links">
+                        <h5>Quick Links</h5>
+                        <a href="">Help</a><br>
+                        <a href="">Shipping Policy</a><br>
+                        <a href="">Cancelation & Returns</a><br>
+                        <a href="">FAQ</a><br>
+                        <a href="">Privacy Policy</a><br>
+                        <a href="">Disclamer</a>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <h5>Lets be social</h5>
+                    <div class="redes">
+                        <img src="img/fb_icon_325x325.png" width="20%">
+                        <img src="img/Instagram-Icon.png" width="20%">
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="contato">
+                        <h5>Contact us</h5>
+                        <p>Address line: Seven <br> Street: No place</p>
+
+                        <img src="img/5613972.png" width="10%" style="padding-right: 2%;"><a
+                            href="">info@company.com</a> <br>
+
+                        <img src="img/94915.png" width="10%"> <em>1 800 4400 22</em>
                     </div>
                 </div>
             </div>
+        </div>
+
+
+
+
+
+    </footer>
+
+    <div id="creditos">
+        <p>&copy 2023 <a href="https://github.com/Pedro-Resende-VEVO"
+                style="color: black;">https://github.com/Pedro-Resende-VEVO</a></p>
     </div>
 
-    </section>
-
-    <footer>&copy 2023 Sl3nc.com.</footer>
-
     <script>
+        function switchPage() {
+            window.location.href = "/Web-Fake_Store/code/menu/index.php";
+        }
+
         function queryString(parameter) {
             var loc = location.search.substring(1, location.search.length);
             var param_value = false;
@@ -196,8 +209,8 @@
                 document.getElementById('price').innerHTML = "R$" + response.price;
                 document.getElementById('desc').innerHTML = response.description;
                 document.getElementById('cate').innerHTML = response.category;
-                document.getElementById('rate').innerHTML = "Nota: " + response.rating.rate;
-                document.getElementById('count').innerHTML = "Qnt. de avaliações: " + response.rating.count;
+                document.getElementById('rate').innerHTML = response.rating.rate;
+                document.getElementById('count').innerHTML = `<i> Number of reviews: </i>` + response.rating.count;
             })
 
         function pes() {

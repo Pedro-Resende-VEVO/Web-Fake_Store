@@ -1,0 +1,468 @@
+<?php
+include ("conexao.php");
+
+session_start();
+
+$coraWish;
+
+if (isset($_SESSION['id'])) {
+
+  $userID = $_SESSION['id'];
+
+  for ($i = 1; $i <= 6; $i++) {
+    $sql_code = "SELECT * FROM wish WHERE userID = '$userID' AND wishID = '$i'";
+    $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
+
+    $quantidade = $sql_query->num_rows;
+
+    if ($quantidade == 0) {
+      $coraWish[$i] = '♡';
+    } else {
+      $coraWish[$i] = '❤';
+    }
+  }
+} else {
+  $coraWish = ["*", "♡", "♡", "♡", "♡", "♡", "♡"];
+}
+
+if (isset($_GET['wish'])) {
+
+  if (isset($_SESSION['id'])) //se tiver o ID registrado 
+  {
+    $userID = $_SESSION['id'];
+    $wishID = $_GET['wish'];
+    
+    $sql_code = "SELECT * FROM wish WHERE userID = '$userID' AND wishID = '$wishID'";
+    $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
+
+    $quantidade = $sql_query->num_rows;
+
+    if ($quantidade == 0) { //se não tiver o id produto naquele perfil... add
+      echo "<script> alert(\"Entrou inserir\"); </script>";
+      $sql_code = "INSERT INTO wish (userID, wishID) VALUES ('$userID', '$wishID')";
+      $sql_query = $mysqli->query($sql_code) or die($aviso = "Falha na execução do código SQL" . $mysqli->error);
+
+      $coraWish[$wishID] = '❤';
+
+    } else { //se já estiver, se remove dos favoritos
+      echo "<script> alert(\"Entrou remover\"); </script>";
+      $sql_code = "DELETE FROM wish WHERE userID = '$userID' AND wishID = '$wishID'";
+      $sql_query = $mysqli->query($sql_code) or die($aviso = "Falha na execução do código SQL" . $mysqli->error);
+
+      $coraWish[$wishID] = "♡";
+    }
+  } else {
+    echo "<script> alert(\"Faça login para usar essa função\"); </script>";
+  }
+
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lojinha</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="js">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+    crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+
+<body>
+  <!--Cabeçalho-->
+  <header>
+
+
+    <img id="logo" src="img/Logo.png" width="20%">
+    <div class="part1">
+      <h3 id="sese">Welcome to <br><strong>Sesas Store!</strong></h3>
+
+      <!--Pesquisa-->
+      <nav id="pesquisa">
+        <div>
+          <input type="text" id="textPes" placeholder="Search for a product">
+        </div>
+        <div onclick="pes()">
+          <a href="/code/search/pesquisa.html"><button>Search</button></a>
+        </div>
+      </nav>
+    </div>
+
+    <!--Navbar-->
+
+    <div class="part2">
+      <ul class="nav">
+
+        <li class="nav-item">
+          <h5><a class="nav-link" href="/Web-Fake_Store/code/login/login.php">Sign in</a>
+        </li>
+        <li class="nav-item">
+          <h5><a class="nav-link" href="/Web-Fake_Store/code/register/registro.php">Register</a>
+        </li>
+        <li class="nav-item">
+          <h5><a class="nav-link" href="/Web-Fake_Store/code/account/conta.php">My Accont</a>
+        </li>
+        <li class="nav-item">
+          <h5><a class="nav-link" href="/Web-Fake_Store/code/cart/cart.php">Track Order</a>
+        </li>
+      </ul>
+
+      <!--Carrinho-->
+      <div id="info">
+        <b>Informações do Aluno:</b>
+        <ul>
+          <li><em>Nome:</em> Pedro Henrique Resende Menezes</li>
+          <li><em>Curso:</em> Sistemas de Informação</li>
+        </ul>
+        <div>
+          <button>
+            <img src="img/carrinho.png" width="5%">
+            MY CART
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+  <!--Semi-grid-->
+  <nav>
+    <!--Formulário-->
+    <table class="form" border="2">
+      <thead>
+        <tr>
+          <td>
+            <b>Quick Find - Choose product</b>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Find the right product at the right price
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <select class="form-select" aria-label="Default select example" id="seleTitle">
+              <option>Titles</option>
+              <option value="Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops">Fjallraven - Foldsack No. 1
+                Backpack, Fits 15 Laptops</option>
+              <option value="Mens Casual Premium Slim Fit T-Shirts ">Mens Casual Premium Slim Fit T-Shirts </option>
+              <option value="John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet">John Hardy
+                Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet</option>
+              <option value="Solid Gold Petite Micropave ">Solid Gold Petite Micropave </option>
+              <option value="White Gold Plated Princess">White Gold Plated Princess</option>
+              <option value="Pierced Owl Rose Gold Plated Stainless Steel Double">Pierced Owl Rose Gold Plated
+                Stainless Steel Double</option>
+              <option value="WD 2TB Elements Portable External Hard Drive - USB 3.0 ">WD 2TB Elements Portable
+                External Hard Drive - USB 3.0 </option>
+              <option value="SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s">SanDisk SSD PLUS 1TB Internal SSD -
+                SATA III 6 Gb/s</option>
+              <option value="Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5">Silicon
+                Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5</option>
+              <option value="WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive">WD 4TB Gaming
+                Drive Works with Playstation 4 Portable External Hard Drive</option>
+              <option value="Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin">Acer SB220Q bi 21.5
+                inches Full HD (1920 x 1080) IPS Ultra-Thin</option>
+              <option
+                value="Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ">
+                Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED
+              </option>
+              <option value="BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats">BIYLACLESEN Women's 3-in-1
+                Snowboard Jacket Winter Coats</option>
+              <option value="Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket">Lock and Love
+                Women's Removable Hooded Faux Leather Moto Biker Jacket</option>
+              <option value="Rain Jacket Women Windbreaker Striped Climbing Raincoats">Rain Jacket Women Windbreaker
+                Striped Climbing Raincoats</option>
+              <option value="MBJ Women's Solid Short Sleeve Boat Neck V ">MBJ Women's Solid Short Sleeve Boat Neck V
+              </option>
+              <option value="Opna Women's Short Sleeve Moisture">Opna Women's Short Sleeve Moisture</option>
+              <option value="DANVOUY Womens T Shirt Casual Cotton Short">DANVOUY Womens T Shirt Casual Cotton Short
+              </option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <select class="form-select" aria-label="Default select example" id="seleCate">
+              <option>Category</option>
+              <option value="electronics">electronics</option>
+              <option value="jewelery">jewelery</option>
+              <option value="men's clothing">men's clothing</option>
+              <option value="women's clothing">women's clothing</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td onclick="pesCate()">
+            <a href="/Web-Fake_Store/code/search/pesquisa.html"><button><img src="img/lupa.png" width="10%">
+                Search</button></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!--Carrosel-->
+
+
+    <div class="carrosel">
+      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img id="carro1" src="" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img id="carro2" src="" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img id="carro3" src="" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!--Grid-->
+  <section>
+    <div class="container text-center">
+
+      <div class="row g-3">
+
+        <div class="col-md-3 ms-md-auto p-3 border">
+          <div class="card" onclick="deta(1)">
+            <img id="img1" width="100%">
+            <h5 id="title1"></h5>
+            <div id="infoCard">
+              <p class="price" id="pre1"></p>
+              <form method="GET">
+                <button type="submit" name="wish" value="1"><?php echo $coraWish[1] ?></button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 ms-md-auto p-3 border">
+          <div class="card" onclick="deta(2)">
+            <img id="img2" width="100%">
+            <h5 id="title2"></h5>
+            <div id="infoCard">
+              <p class="price" id="pre2"></p>
+
+              <form action="index.php" method="GET">
+                <button type="submit" name="wish" value="2"><?php echo $coraWish[2] ?></button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 ms-md-auto p-3 border">
+          <div class="card" onclick="deta(3)">
+            <img id="img3" width="100%">
+            <h5 id="title3"></h5>
+            <div id="infoCard">
+              <p class="price" id="pre3"></p>
+
+              <form action="index.php" method="GET">
+                <button type="submit" name="wish" value="3"><?php echo $coraWish[3] ?></button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-3">
+
+        <div class="col-md-3 ms-md-auto p-3 border">
+          <div class="card" onclick="deta(4)">
+            <img id="img4" width="100%">
+            <h5 id="title4"></h5>
+            <div id="infoCard">
+              <p class="price" id="pre4"></p>
+
+              <form action="index.php" method="GET">
+                <button type="submit" name="wish" value="4"><?php echo $coraWish[4] ?></button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 ms-md-auto p-3 border">
+          <div class="card" onclick="deta(20)">
+            <img id="img5" width="100%">
+            <h5 id="title5"></h5>
+            <div id="infoCard">
+              <p class="price" id="pre5"></p>
+
+              <form action="index.php" method="GET">
+                <button type="submit" name="wish" value="5"><?php echo $coraWish[5] ?></button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 ms-md-auto p-3  border">
+          <div class="card" onclick="deta(18)">
+            <img id="img6" width="100%">
+            <h5 id="title6"></h5>
+            <div id="infoCard">
+              <p class="price" id="pre6"></p>
+
+              <form action="index.php" method="GET">
+                <button type="submit" name="wish" value="6"><?php echo $coraWish[6] ?></button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!--Lista lateral-->
+  <div id="Lateral">
+
+    <aside id="Most">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col">
+            <h3 id="titleAside">Most Reviwed Itens</h3>
+
+            <div class="row">
+
+              <div class="col m-3" onclick="deta(7)">
+                <img id="img7" width="50%">
+                <div class="textAside">
+                  <p id="title7"></p>
+                  <strong id="pre7"></strong>
+                </div>
+              </div>
+
+              <div class="col m-3" onclick="deta(7)">
+                <img id="img8" width="50%">
+                <div class="textAside">
+                  <p id="title8"></p>
+                  <strong id="pre8"></strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+
+              <div class="col m-3" onclick="deta(8)">
+                <img id="img9" width="50%" height="auto">
+                <div class="textAside">
+                  <p id="title9"></p>
+                  <strong id="pre9"></strong>
+                </div>
+              </div>
+
+              <div class="col m-3" onclick="deta(10)">
+                <img id="img10" width="50%">
+                <div class="textAside">
+                  <p id="title10"></p>
+                  <strong id="pre10"></strong>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+
+    <aside id="News">
+      <h5 id="titleNews">Newsletter</h5>
+      <p id="textNews">Sign up to stay up to date</p>
+      <input type="email" placeholder="Email Address">
+      <button>Join Now!</button>
+    </aside>
+  </div>
+
+
+  <!--Rodapé-->
+
+  <footer>
+    <div class="container text-center">
+
+      <div class="row">
+
+        <div class="col">
+          <div class="metodos">
+            <h5>Payment Methods: </h5>
+            <img src="img/Visa_Inc._logo.svg.png" width="20%">
+            <img src="img/fatura-mastercard.png" width="20%">
+            <img src="img/American-Express-Logo.png" width="20%"><br>
+            <img src="img/PayPal-Logo.png" width="20%">
+            <img src="img/cash-on-delivery-icon-12.jpg" width="20%">
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="links">
+            <h5>Quick Links</h5>
+            <a href="">Help</a><br>
+            <a href="">Shipping Policy</a><br>
+            <a href="">Cancelation & Returns</a><br>
+            <a href="">FAQ</a><br>
+            <a href="">Privacy Policy</a><br>
+            <a href="">Disclamer</a>
+          </div>
+        </div>
+
+        <div class="col">
+          <h5>Lets be social</h5>
+          <div class="redes">
+            <img src="img/fb_icon_325x325.png" width="20%">
+            <img src="img/Instagram-Icon.png" width="20%">
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="contato">
+            <h5>Contact us</h5>
+            <p>Address line: Seven <br> Street: No place</p>
+
+            <img src="img/5613972.png" width="10%" style="padding-right: 2%;"><a href="">info@company.com</a> <br>
+
+            <img src="img/94915.png" width="10%"> <em>1 800 4400 22</em>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+  <div id="creditos">
+    <p>&copy 2023 <a href="https://github.com/Pedro-Resende-VEVO"
+        style="color: black;">https://github.com/Pedro-Resende-VEVO</a></p>
+  </div>
+
+</body>
+
+</html>
